@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Open.FileSystem.GlobalActionManager" Collapsed="true">
+    <Position X="1.75" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAEAAAEAEQAEAEAAAAAAAAAAAAAAAAAkQQ=</HashCode>
+      <FileName>FileSystems\GlobalActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.FileSystemActionManager" Collapsed="true">
+    <Position X="3" Y="1" Width="2" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.FileSystem.ProviderActionManager" Collapsed="true">
+    <Position X="4.25" Y="2.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileSystems\ProviderActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.FacebookActionManager" Collapsed="true">
+    <Position X="4.25" Y="3" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAIAAAAAAAAAQAAAAAAAAAAgAAAAAAAAAAAQA=</HashCode>
+      <FileName>FileSystems\Facebook\FacebookActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.FlickrActionManager" Collapsed="true">
+    <Position X="4.25" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>FileSystems\Flickr\FlickrActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.GoogleDriveActionManager" Collapsed="true">
+    <Position X="4.25" Y="6" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAggACIAAAAAAAAAQAAAAAAAAAAwgCAAAAAAgAAQA=</HashCode>
+      <FileName>FileSystems\GoogleDrive\GoogleDriveActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.GooglePlusActionManager" Collapsed="true">
+    <Position X="4.25" Y="6.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>FileSystems\GooglePlus\GooglePlusActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.SkyDriveActionManager" Collapsed="true">
+    <Position X="4.25" Y="7.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>FileSystems\SkyDrive\SkyDriveActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.TwitterActionManager" Collapsed="true">
+    <Position X="4.25" Y="4.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>FileSystems\Twitter\TwitterActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.YouTubeActionManager" Collapsed="true">
+    <Position X="4.25" Y="5.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>FileSystems\YouTube\YouTubeActionManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

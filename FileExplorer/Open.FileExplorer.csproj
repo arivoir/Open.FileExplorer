@@ -1,0 +1,240 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<Authors>Alvaro Rivoir</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Version>1.0.0</Version>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="FileSystems\Facebook\**" />
+	  <EmbeddedResource Remove="FileSystems\Facebook\**" />
+	  <None Remove="FileSystems\Facebook\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Open.Box" Version="1.0.0" />
+		<PackageReference Include="Open.DropBox" Version="1.0.0" />
+		<PackageReference Include="Open.FileSystemAsync" Version="1.0.1" />
+		<PackageReference Include="Open.Flickr" Version="1.0.0" />
+		<PackageReference Include="Open.GoogleDrive" Version="1.0.0" />
+		<PackageReference Include="Open.GooglePhotos" Version="2.0.0" />
+		<PackageReference Include="Open.Instagram" Version="1.0.0" />
+		<PackageReference Include="Open.IO" Version="1.0.0" />
+		<PackageReference Include="Open.Mega" Version="1.0.0" />
+		<PackageReference Include="Open.OneDrive" Version="1.0.0" />
+		<PackageReference Include="Open.Twitter" Version="1.0.0" />
+		<PackageReference Include="Open.WebDav" Version="1.0.0" />
+		<PackageReference Include="Open.YouTube" Version="1.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Strings\AboutResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>AboutResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\ApplicationResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ApplicationResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\AuthenticationFormResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>AuthenticationFormResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\DropBoxResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>DropBoxResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\FacebookResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>FacebookResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\FileSystemResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>FileSystemResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\FlickrResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>FlickrResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\FolderPickerResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>FolderPickerResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\GlobalResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>GlobalResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\GoogleDriveResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>GoogleDriveResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\GooglePhotosResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>GooglePhotosResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\MegaResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>MegaResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\OneDriveResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>OneDriveResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\PhotoViewerResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>PhotoViewerResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\PrivacyResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>PrivacyResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\ProgressResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>ProgressResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\SearchResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>SearchResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\SettingsResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>SettingsResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\TimeSpanResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>TimeSpanResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\TwitterResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>TwitterResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\YouTubeResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>YouTubeResources.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Strings\SubscriptionResources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>SubscriptionResources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Strings\AboutResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>AboutResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\ApplicationResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>ApplicationResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\AuthenticationFormResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>AuthenticationFormResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\DropBoxResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>DropBoxResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\FacebookResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>FacebookResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\FileSystemResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>FileSystemResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\FlickrResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>FlickrResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\FolderPickerResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>FolderPickerResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\GlobalResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>GlobalResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\GoogleDriveResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>GoogleDriveResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\GooglePhotosResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>GooglePhotosResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\MegaResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>MegaResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\OneDriveResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>OneDriveResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\PhotoViewerResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>PhotoViewerResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\PrivacyResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>PrivacyResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\ProgressResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>ProgressResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\SearchResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>SearchResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\SettingsResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>SettingsResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\TimeSpanResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>TimeSpanResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\TwitterResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>TwitterResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\YouTubeResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>YouTubeResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+		<EmbeddedResource Update="Strings\SubscriptionResources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>SubscriptionResources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>

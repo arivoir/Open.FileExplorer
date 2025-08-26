@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Open.FileSystem.FileSystemAsync" Collapsed="true">
+    <Position X="3.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.FileSystem.ProviderFileSystem" Collapsed="true">
+    <Position X="5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAABAAAAAEAAAAAAAAAAAAAAAAAAAIBCAAAAAAAAA=</HashCode>
+      <FileName>FileSystems\ProviderFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.GlobalFileSystem" Collapsed="true">
+    <Position X="2.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>DiAQaoKWAEEABBXcOgAoIlqAIMBZAZApgBAQfVFphwY=</HashCode>
+      <FileName>FileSystems\GlobalFileSystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.FileSystem.UnifiedItemsFileSystem" Collapsed="true">
+    <Position X="6.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>FileSystems\UnifiedItemsFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.FourSharedFileSystem" Collapsed="true">
+    <Position X="9.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAEAAAAAAQAAAIABAAAAAAAAAAAJAAAAAA=</HashCode>
+      <FileName>FileSystems\4Shared\FourSharedFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.BaiduFileSystem" Collapsed="true">
+    <Position X="8" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FBwcABiSAIAgACAgogAoAAJkQIhIMJQJAAABKEAQAAA=</HashCode>
+      <FileName>FileSystems\Baidu\BaiduFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.BitcasaFileSystem" Collapsed="true">
+    <Position X="8" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FBQUABgSAIAwEAAAggEIAAIEEIhKIJAJAAABKEAQAAA=</HashCode>
+      <FileName>FileSystems\Bitcasa\BitcasaFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.BoxFileSystem" Collapsed="true">
+    <Position X="8" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FDRUAhiSSJEggAAYogAqAAoEMIhIMdAJACAFKEAQAAA=</HashCode>
+      <FileName>FileSystems\Box\BoxFileSystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.FileSystem.CloudMeFileSystem" Collapsed="true">
+    <Position X="9.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAQRAAyAIAEAAAAAAAAAAIAAAAAQIAIAAAACAAAAEA=</HashCode>
+      <FileName>FileSystems\CloudMe\CloudMeFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.CopyFileSystem" Collapsed="true">
+    <Position X="8" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BBSRABiSAIAgEAAAAgEoAgIEQIBIIJVBAIABIEAQAAI=</HashCode>
+      <FileName>FileSystems\Copy\CopyFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.DropBoxFileSystem" Collapsed="true">
+    <Position X="8" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FBQUCBiSAIAgEAAAogAoAAIEEIhIIJAJAAABKMAQAAA=</HashCode>
+      <FileName>FileSystems\DropBox\DropBoxFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.FacebookFileSystem" Collapsed="true">
+    <Position X="3.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BDJQAgjWAJEgBAE6kgFACBoEIIlABdABAoAAakQCCQk=</HashCode>
+      <FileName>FileSystems\Facebook\FacebookFileSystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.FileSystem.FlickrFileSystem" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADAQAAiSAIEgAAI4IAEIABoAMIAKgVAJAAABYEACAQA=</HashCode>
+      <FileName>FileSystems\Flickr\FlickrFileSystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.FileSystem.GoogleDriveFileSystem" Collapsed="true">
+    <Position X="3.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FhRwAxgSIoIwFKTEogEJAArEkIjIFPwAAigBaEgAAAA=</HashCode>
+      <FileName>FileSystems\GoogleDrive\GoogleDriveFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.GooglePlusFileSystem" Collapsed="true">
+    <Position X="3.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BTQQAAiSAIEgBCA4ogGIABsEIIhIEVABAIABeEAAAAA=</HashCode>
+      <FileName>FileSystems\GooglePlus\GooglePlusFileSystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.FileSystem.HiDriveFileSystem" Collapsed="true">
+    <Position X="9.25" Y="12.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAAAAIAEAAAAQAAAAAIAEABAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>FileSystems\HiDrive\HiDriveFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.InstagramFileSystem" Collapsed="true">
+    <Position X="3.5" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAIAAiAAIEAAAAYggEAAAoAIAAIIdABAoAAYAAAAQA=</HashCode>
+      <FileName>FileSystems\Instagram\InstagramFileSystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.FileSystem.KanboxFileSystem" Collapsed="true">
+    <Position X="8" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FBQcABgSAIAgECAAggAIAAJkAIhIMJQJAAABKEAQAAA=</HashCode>
+      <FileName>FileSystems\Kanbox\KanboxFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.SkyDriveFileSystem" Collapsed="true">
+    <Position X="8" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FDRQAhiSAIEgECA4ogAIAAoEIIhIEdABAIABKkAQQQA=</HashCode>
+      <FileName>FileSystems\SkyDrive\SkyDriveFileSystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.FileSystem.SugarSyncFileSystem" Collapsed="true">
+    <Position X="3.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FhRQBhmSQIAgEAAAAwE4AAIkEIBIENgAAgABKEQAABA=</HashCode>
+      <FileName>FileSystems\SugarSync\SugarSyncFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.TwitterFileSystem" Collapsed="true">
+    <Position X="3.5" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAQAAiAAIEgAAIYIgEAAhoAMIAKIdABAAAAYEAAAQA=</HashCode>
+      <FileName>FileSystems\Twitter\TwitterFileSystem.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Open.FileSystem.WebDavFileSystem" Collapsed="true">
+    <Position X="8" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FBQUABgSAYAgEAAQaswIAAIEAIBIAJAMAAABKEIQBQA=</HashCode>
+      <FileName>FileSystems\WebDav\WebDavFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.YouTubeFileSystem" Collapsed="true">
+    <Position X="3.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BFTwAAEyAIQgAAQAogEIghIEQIxIEFAACIABAEAAABg=</HashCode>
+      <FileName>FileSystems\YouTube\YouTubeFileSystem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Open.FileSystem.TransactedFileSystemAsync" Collapsed="true">
+    <Position X="5" Y="1.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

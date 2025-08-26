@@ -1,0 +1,379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CopyFileError" xml:space="preserve">
+    <value>Non è possibile copiare il file.</value>
+  </data>
+  <data name="CopyFilesError" xml:space="preserve">
+    <value>Non è possibile copiare {0} file.</value>
+  </data>
+  <data name="CopyFolderError" xml:space="preserve">
+    <value>Non è possibile copiare la cartella.</value>
+  </data>
+  <data name="CopyFoldersError" xml:space="preserve">
+    <value>Non è possibile copiare {0} cartelle.</value>
+  </data>
+  <data name="CopyHereLabel" xml:space="preserve">
+    <value>Copia qui</value>
+  </data>
+  <data name="CopyItemsError" xml:space="preserve">
+    <value>Non è possibile copiare {0} elementi</value>
+  </data>
+  <data name="CopyLabel" xml:space="preserve">
+    <value>Copia</value>
+  </data>
+  <data name="CreateFolderError" xml:space="preserve">
+    <value>Non è stato possibile creare la cartella.</value>
+  </data>
+  <data name="CreateFolderLabel" xml:space="preserve">
+    <value>Crea cartella</value>
+  </data>
+  <data name="CreatedDateLabel" xml:space="preserve">
+    <value>Data di inserimento</value>
+  </data>
+  <data name="ModifiedDateLabel" xml:space="preserve">
+    <value>Data modifica</value>
+  </data>
+  <data name="DeleteFileError" xml:space="preserve">
+    <value>Non è possibile eliminare il file.</value>
+  </data>
+  <data name="DeleteFileQuestion" xml:space="preserve">
+    <value>Vuoi eliminare il file "{0}"?</value>
+  </data>
+  <data name="DeleteFilesError" xml:space="preserve">
+    <value>Non è possibile eliminare {0} file.</value>
+  </data>
+  <data name="DeleteFilesQuestion" xml:space="preserve">
+    <value>Vuoi eliminare questi {0} file?</value>
+  </data>
+  <data name="DeleteFolderError" xml:space="preserve">
+    <value>Non è possibile eliminare la cartella.</value>
+  </data>
+  <data name="DeleteFolderQuestion" xml:space="preserve">
+    <value>Vuoi eliminare la cartella "{0}"?</value>
+  </data>
+  <data name="DeleteFoldersError" xml:space="preserve">
+    <value>Non è possibile eliminare {0} cartelle.</value>
+  </data>
+  <data name="DeleteFoldersQuestion" xml:space="preserve">
+    <value>Vuoi eliminare queste {0} cartelle?</value>
+  </data>
+  <data name="DeleteLabel" xml:space="preserve">
+    <value>Eliminare</value>
+  </data>
+  <data name="DownloadFileError" xml:space="preserve">
+    <value>Non è stato possibile scaricare il file.</value>
+  </data>
+  <data name="DownloadFilesError" xml:space="preserve">
+    <value>Non è stato possibile scaricare {0} file.</value>
+  </data>
+  <data name="DownloadLabel" xml:space="preserve">
+    <value>Scaricare</value>
+  </data>
+  <data name="DuplicatedFileError" xml:space="preserve">
+    <value>Esiste già un file con lo stesso nome.</value>
+  </data>
+  <data name="DuplicatedFolderError" xml:space="preserve">
+    <value>Esiste già una cartella con lo stesso nome.</value>
+  </data>
+  <data name="DuplicatedItemError" xml:space="preserve">
+    <value>Esiste già un elemento con lo stesso nome.</value>
+  </data>
+  <data name="EmptyFolderMessage" xml:space="preserve">
+    <value>Non ci sono file in questa cartella.</value>
+  </data>
+  <data name="MoveFileError" xml:space="preserve">
+    <value>Non è possibile spostare il file.</value>
+  </data>
+  <data name="MoveFilesError" xml:space="preserve">
+    <value>Non è possibile spostare {0} file.</value>
+  </data>
+  <data name="MoveFolderError" xml:space="preserve">
+    <value>Non è possibile spostare la cartella.</value>
+  </data>
+  <data name="MoveFoldersError" xml:space="preserve">
+    <value>Non è possibile spostare {0} cartelle.</value>
+  </data>
+  <data name="MoveHereLabel" xml:space="preserve">
+    <value>Sposta qui</value>
+  </data>
+  <data name="MoveItemsError" xml:space="preserve">
+    <value>Non è possibile spostare {0} elementi</value>
+  </data>
+  <data name="MoveLabel" xml:space="preserve">
+    <value>Spostare</value>
+  </data>
+  <data name="NameLabel" xml:space="preserve">
+    <value>Nome</value>
+  </data>
+  <data name="NetworkUnavailableMessage" xml:space="preserve">
+    <value>Connessione Internet non disponibile.
+Controlla la tua connessione.</value>
+  </data>
+  <data name="NotCachedFolderMessage" xml:space="preserve">
+    <value>Questa cartella non è disponibile in modalità offline.</value>
+  </data>
+  <data name="OnlineModeLabel" xml:space="preserve">
+    <value>Modalità in linea</value>
+  </data>
+  <data name="OpenLabel" xml:space="preserve">
+    <value>Apri</value>
+  </data>
+  <data name="PropertiesLabel" xml:space="preserve">
+    <value>Proprietà</value>
+  </data>
+  <data name="RefreshLabel" xml:space="preserve">
+    <value>Aggiorna</value>
+  </data>
+  <data name="RequiredLabel" xml:space="preserve">
+    <value>Richiesto</value>
+  </data>
+  <data name="SearchLabel" xml:space="preserve">
+    <value>Cerca</value>
+  </data>
+  <data name="ShareLabel" xml:space="preserve">
+    <value>Condividi</value>
+  </data>
+  <data name="SizeLabel" xml:space="preserve">
+    <value>Dimensione</value>
+  </data>
+  <data name="UnknownFileLabel" xml:space="preserve">
+    <value>File sconosciuto</value>
+  </data>
+  <data name="UpdateFileError" xml:space="preserve">
+    <value>Non è stato possibile aggiornare il file.</value>
+  </data>
+  <data name="UpdateFolderError" xml:space="preserve">
+    <value>Non è stato possibile aggiornare la cartella.</value>
+  </data>
+  <data name="UploadFileError" xml:space="preserve">
+    <value>Non è stato possibile caricare il file.</value>
+  </data>
+  <data name="UploadFilesError" xml:space="preserve">
+    <value>Non è stato possibile caricare {0} file.</value>
+  </data>
+  <data name="UploadFilesLabel" xml:space="preserve">
+    <value>Carica file</value>
+  </data>
+  <data name="UploadFilesSucceded" xml:space="preserve">
+    <value>{0} file sono stati caricati.</value>
+  </data>
+  <data name="UploadFileSucceded" xml:space="preserve">
+    <value>"{0}" è stato caricato.</value>
+  </data>
+  <data name="SelectDifferentFolderMessage" xml:space="preserve">
+    <value>Selezionare una cartella differente.</value>
+  </data>
+  <data name="CopyFilesSucceded" xml:space="preserve">
+    <value>{0} file sono stati copiati.</value>
+  </data>
+  <data name="CopyFileSucceded" xml:space="preserve">
+    <value>"{0}" è stato copiato.</value>
+  </data>
+  <data name="CopyFoldersSucceded" xml:space="preserve">
+    <value>{0} cartelle sono stati copiati.</value>
+  </data>
+  <data name="CopyFolderSucceded" xml:space="preserve">
+    <value>"{0}" è stato copiato.</value>
+  </data>
+  <data name="CopyItemsSucceded" xml:space="preserve">
+    <value>{0} elementi sono stati copiato.</value>
+  </data>
+  <data name="MoveFilesSucceded" xml:space="preserve">
+    <value>{0} file sono stati spostati.</value>
+  </data>
+  <data name="MoveFileSucceded" xml:space="preserve">
+    <value>"{0}" è stato spostato.</value>
+  </data>
+  <data name="MoveFoldersSucceded" xml:space="preserve">
+    <value>{0} cartelle sono stati spostati.</value>
+  </data>
+  <data name="MoveFolderSucceded" xml:space="preserve">
+    <value>"{0}" è stato spostato.</value>
+  </data>
+  <data name="MoveItemsSucceded" xml:space="preserve">
+    <value>{0} elementi sono stati spostati.</value>
+  </data>
+  <data name="EmptyTrashLabel" xml:space="preserve">
+    <value>Svuota cestino</value>
+  </data>
+  <data name="EmptyTrashQuestion" xml:space="preserve">
+    <value>Sei sicuro di voler svuotare il cestino?</value>
+  </data>
+  <data name="DownloadHereLabel" xml:space="preserve">
+    <value>Scaricare qui</value>
+  </data>
+  <data name="UploadHereLabel" xml:space="preserve">
+    <value>Caricare qui</value>
+  </data>
+  <data name="DownloadFilesSucceded" xml:space="preserve">
+    <value>{0} file sono stati scaricati.</value>
+  </data>
+  <data name="DownloadFileSucceded" xml:space="preserve">
+    <value>"{0}" è stato scaricato.</value>
+  </data>
+  <data name="DownloadFoldersSucceded" xml:space="preserve">
+    <value>{0} cartelle sono stati scaricati.</value>
+  </data>
+  <data name="DownloadFolderSucceded" xml:space="preserve">
+    <value>"{0}" è stato scaricata.</value>
+  </data>
+  <data name="DownloadItemsSucceded" xml:space="preserve">
+    <value>{0} elementi sono stati scaricati.</value>
+  </data>
+  <data name="SaveFilesError" xml:space="preserve">
+    <value>I file non può essere salvato.</value>
+  </data>
+  <data name="ContinueQuestion" xml:space="preserve">
+    <value>Sicuro di vole continuare?</value>
+  </data>
+  <data name="DownloadFileForbidden" xml:space="preserve">
+    <value>"{0}" non puoi essere scaricato.</value>
+  </data>
+  <data name="DownloadFilesForbidden" xml:space="preserve">
+    <value>{0} file non possono essere scaricati.</value>
+  </data>
+  <data name="DownloadFileMessage" xml:space="preserve">
+    <value>1 file {0}verrà scaricato e salvato sul vostro telefono.</value>
+  </data>
+  <data name="DownloadFilesMessage" xml:space="preserve">
+    <value>{0} file {1}verranno scaricati e salvati sul telefono.</value>
+  </data>
+  <data name="SaveLabel" xml:space="preserve">
+    <value>Salvare</value>
+  </data>
+  <data name="AccessDeniedMessage" xml:space="preserve">
+    <value>Accesso negato.</value>
+  </data>
+  <data name="CreateLabel" xml:space="preserve">
+    <value>Creare</value>
+  </data>
+  <data name="UploadLabel" xml:space="preserve">
+    <value>Caricare</value>
+  </data>
+  <data name="DuplicatedItemsError" xml:space="preserve">
+    <value>Esiste già {0} elementos con lo stesso nome.</value>
+  </data>
+  <data name="KeepExistingFilesMessage" xml:space="preserve">
+    <value>Mantenere i file esistenti</value>
+  </data>
+  <data name="RenameFilesMessage" xml:space="preserve">
+    <value>Rinominare i file</value>
+  </data>
+</root>
