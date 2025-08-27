@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading;
-using System.Threading.Tasks;
-using C1.DataCollection;
+﻿using C1.DataCollection;
 using Open.DropBox;
 using Open.FileSystemAsync;
 using Open.IO;
 using Path = Open.FileSystemAsync.Path;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.DropBox
 {
     public class DropBoxFileSystem : UnifiedItemsFileSystem, ISearchExtension
     {

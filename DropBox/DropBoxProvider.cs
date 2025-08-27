@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.DropBox
 {
     /// <summary>
     /// Provides methods to create a new connection to DropBox.

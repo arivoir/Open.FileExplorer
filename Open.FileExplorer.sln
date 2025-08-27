@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.FileExplorer.OwnCloud"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.FileExplorer.Sharepoint", "Sharepoint\Open.FileExplorer.Sharepoint.csproj", "{5B3F5660-19EE-A91E-1239-9642F8337BC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.FileExplorer.DropBox", "DropBox\Open.FileExplorer.DropBox.csproj", "{EC698E1A-9BED-5CF6-52BD-1B621FA23123}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{5B3F5660-19EE-A91E-1239-9642F8337BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B3F5660-19EE-A91E-1239-9642F8337BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B3F5660-19EE-A91E-1239-9642F8337BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC698E1A-9BED-5CF6-52BD-1B621FA23123}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC698E1A-9BED-5CF6-52BD-1B621FA23123}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC698E1A-9BED-5CF6-52BD-1B621FA23123}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC698E1A-9BED-5CF6-52BD-1B621FA23123}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

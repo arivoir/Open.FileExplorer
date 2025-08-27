@@ -31,7 +31,7 @@ namespace Open.FileExplorer
             {
                 //yield return new FacebookProvider();
                 yield return new GoogleDriveProvider();
-                yield return new DropBoxProvider();
+                //yield return new DropBoxProvider();
                 yield return new OneDriveProvider();
                 yield return new GooglePhotosProvider();
                 yield return new YouTubeProvider();

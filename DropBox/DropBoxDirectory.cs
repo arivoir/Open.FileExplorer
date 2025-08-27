@@ -1,8 +1,7 @@
-﻿using System;
-using Open.DropBox;
+﻿using Open.DropBox;
 using Open.FileSystemAsync;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.DropBox
 {
     public class DropBoxDirectory : FileSystemDirectory
     {
