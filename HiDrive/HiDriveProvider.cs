@@ -1,33 +1,32 @@
-﻿using Open.FileSystemAsync;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Open.FileExplorer.WebDav;
+using Open.FileSystemAsync;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.HiDrive
 {
     /// <summary>
     /// Provides methods to create a new connection to Google Drive.
     /// </summary>
-    public class WebDavProvider : Provider
+    public class HiDriveProvider : WebDavProvider
     {
-        #region ** object model
+        #region object model
 
         public override string Name
         {
-            get { return "WebDav"; }
+            get { return "HiDrive"; }
         }
 
         public override string Color
         {
-            get { return "#FF33427E"; }
+            get { return "#FFEC7703"; }
         }
 
         #endregion
 
-        #region ** methods
+        #region methods
 
         public override AuthenticatedFileSystem CreateFileSystem(IAuthenticationManager authenticationManager)
         {
-            return new WebDavFileSystem() { AuthenticationManager = authenticationManager };
+            return new HiDriveFileSystem() { AuthenticationManager = authenticationManager };
         }
 
         #endregion

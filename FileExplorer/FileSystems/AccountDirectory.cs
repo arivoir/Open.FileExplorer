@@ -9,13 +9,13 @@ namespace Open.FileExplorer
     [DataContract]
     public class AccountDirectory : FileSystemDirectory
     {
-        #region ** fields
+        #region fields
 
         private IProvider _provider = null;
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public AccountDirectory()
         {
@@ -23,7 +23,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         [DataMember(Name = "id", IsRequired = true)]
         public new string Id
@@ -57,7 +57,7 @@ namespace Open.FileExplorer
         public string ConnectionString { get; set; }
         [DataMember(Name = "user_id", EmitDefaultValue = false)]
         public string UserId { get; set; }
-        #region ** back compatibility
+        #region back compatibility
         [DataMember(Name = "account", EmitDefaultValue = false)]
         public string Account 
         { 

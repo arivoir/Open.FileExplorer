@@ -5,7 +5,7 @@ namespace Open.FileExplorer
 {
     public class FlickrPhotoViewModel : FileSystemFileViewModel
     {
-        #region ** initialization
+        #region initialization
 
         public FlickrPhotoViewModel(FileExplorerViewModel fileExplorer, string dirId, FileSystemItem item, IFileInfo file)
             : base(fileExplorer, dirId, item, file)
@@ -14,7 +14,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         protected override bool NameIsRequired
         {
@@ -99,7 +99,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** templates
+        #region templates
 
         public override string FormTemplate
         {
@@ -119,7 +119,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** labels
+        #region labels
 
         public string TitleLabel
         {

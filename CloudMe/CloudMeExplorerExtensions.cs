@@ -1,6 +1,6 @@
 ﻿using Open.FileSystemAsync;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.CloudMe
 {
     public class CloudMeExplorerExtensions : ProviderFileExplorerExtensions
     {

@@ -1,33 +1,32 @@
-﻿using Open.FileSystemAsync;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Open.FileExplorer.WebDav;
+using Open.FileSystemAsync;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.Sharepoint
 {
     /// <summary>
     /// Provides methods to create a new connection to Google Drive.
     /// </summary>
-    public class HiDriveProvider : WebDavProvider
+    public class SharepointProvider : WebDavProvider
     {
-        #region ** object model
+        #region object model
 
         public override string Name
         {
-            get { return "HiDrive"; }
+            get { return "Sharepoint"; }
         }
 
         public override string Color
         {
-            get { return "#FFEC7703"; }
+            get { return "#FF147EE5"; }
         }
 
         #endregion
 
-        #region ** methods
+        #region methods
 
         public override AuthenticatedFileSystem CreateFileSystem(IAuthenticationManager authenticationManager)
         {
-            return new HiDriveFileSystem() { AuthenticationManager = authenticationManager };
+            return new SharepointFileSystem() { AuthenticationManager = authenticationManager };
         }
 
         #endregion

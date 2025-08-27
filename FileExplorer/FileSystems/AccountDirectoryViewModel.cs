@@ -6,7 +6,7 @@ namespace Open.FileExplorer
 {
     public class AccountDirectoryViewModel : FileSystemDirectoryViewModel
     {
-        #region ** initialization
+        #region initialization
 
         public AccountDirectoryViewModel() : base(null, null, null) { }
 
@@ -17,7 +17,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public string Color
         {
@@ -122,7 +122,7 @@ namespace Open.FileExplorer
         }
         #endregion
 
-        #region ** templates
+        #region templates
 
         public override string ItemTemplate
         {

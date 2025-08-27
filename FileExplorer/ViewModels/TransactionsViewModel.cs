@@ -11,13 +11,13 @@ namespace Open.FileExplorer
 {
     public class TransactionsViewModel : BaseViewModel
     {
-        #region ** fields
+        #region fields
 
         private WeakReference<List<TransactionViewModel>> _transactions;
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public TransactionsViewModel(FileExplorerViewModel fileExplorer)
         {
@@ -27,7 +27,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public FileExplorerViewModel FileExplorer { get; private set; }
 
@@ -96,13 +96,13 @@ namespace Open.FileExplorer
 
     public class TransactionViewModel : BaseViewModel
     {
-        #region ** fields
+        #region fields
 
         private TransformList<Operation, OperationViewModel> _operations;
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public TransactionViewModel(Transaction transaction)
         {
@@ -123,7 +123,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public Transaction Transaction { get; set; }
         public TaskCommand CancelCommand { get; protected set; }
@@ -180,7 +180,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         public static string GetPendingActionsMessage(IEnumerable<Transaction> transactions, bool filterActive = true)
         {
@@ -389,7 +389,7 @@ namespace Open.FileExplorer
 
     public class OperationViewModel : BaseViewModel
     {
-        #region ** initialization
+        #region initialization
 
         public OperationViewModel(Operation operation)
         {
@@ -399,7 +399,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public Operation Operation { get; private set; }
         public TaskCommand CancelCommand { get; protected set; }
@@ -430,7 +430,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         public virtual Task<string> GetPathAsync()
         {

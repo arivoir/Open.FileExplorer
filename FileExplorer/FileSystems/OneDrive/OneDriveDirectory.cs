@@ -6,7 +6,7 @@ namespace Open.FileExplorer
 {
     public class OneDriveDirectory : FileSystemDirectory
     {
-        #region ** initialization
+        #region initialization
 
         public OneDriveDirectory(string id, string name)
         {
@@ -56,7 +56,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         /// <summary>
         /// The Documents folder.

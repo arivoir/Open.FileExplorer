@@ -1,10 +1,11 @@
-﻿using Open.FileSystemAsync;
+﻿using Open.FileExplorer.WebDav;
+using Open.FileSystemAsync;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.CloudMe
 {
     public class CloudMeDirectoryViewModel : FileSystemDirectoryViewModel
     {
-        #region ** initialization
+        #region initialization
 
         public CloudMeDirectoryViewModel(FileExplorerViewModel fileExplorer, string dirId, FileSystemItem item)
             : base(fileExplorer, dirId, item)

@@ -21,7 +21,7 @@ namespace Open.FileExplorer
     /// </summary>
     public class GlobalFileSystem : IFileSystemAsync, ISocialExtension, ISearchExtension
     {
-        #region ** fields
+        #region fields
 
         //private List<GlobalDirectory> _connections;
         private const string ENCRIPTED_CONNECTIONS_FILE_NAME = "Connections.json.encripted";
@@ -29,7 +29,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public GlobalFileSystem(IAppService appService)
         {
@@ -38,14 +38,14 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public IAppService AppService { get; private set; }
         private ObservableCollection<AccountDirectory> Accounts { get; set; }
 
         #endregion
 
-        #region ** load/unload
+        #region load/unload
 
         public async Task<bool> CheckAccessAsync(string dirId, bool promptIfNecessary, CancellationToken cancellationToken)
         {
@@ -143,7 +143,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** connections
+        #region connections
 
         public Task<FileSystemDrive> GetDriveAsync(CancellationToken cancellationToken)
         {
@@ -261,7 +261,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** private stuff
+        #region private stuff
 
         public AccountDirectory GetConnection(string dirId)
         {
@@ -298,7 +298,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** names resolution
+        #region names resolution
 
         public string GetDirectoryId(string parentDirId, string dirName)
         {
@@ -437,7 +437,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** queries
+        #region queries
 
         public async Task<bool> ExistsDirectoryAsync(string path, CancellationToken cancellationToken)
         {
@@ -483,7 +483,7 @@ namespace Open.FileExplorer
             {
                 if (Accounts == null)
                 {
-                    #region ** legacy format
+                    #region legacy format
 
                     //try
                     //{
@@ -769,7 +769,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** modifying
+        #region modifying
 
         public string[] GetAcceptedFileTypes(string dirId, bool includeSubDirectories)
         {
@@ -1176,7 +1176,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** social extension
+        #region social extension
 
         public event EventHandler CommentsChanged;
 
@@ -1314,7 +1314,7 @@ namespace Open.FileExplorer
         }
         #endregion
 
-        #region ** search
+        #region search
 
         public async Task<bool> CanSearchAsync(string dirId, CancellationToken cancellationToken)
         {
@@ -1394,7 +1394,7 @@ namespace Open.FileExplorer
             return SynchronizationContext.Current == null ? TaskScheduler.Current : TaskScheduler.FromCurrentSynchronizationContext();
         }
 
-        #region ** storage
+        #region storage
 
 
         private const string ACCOUNTS_FILE_NAME = "Accounts.json";
@@ -1509,11 +1509,11 @@ namespace Open.FileExplorer
         }
     }
 
-    #region ** legacy
+    #region legacy
 
     public class GlobalDirectory : IXmlSerializable
     {
-        #region ** object model
+        #region object model
         public string Id { get; private set; }
         public string Name { get; private set; }
         public string ConnectionString { get; internal set; }
@@ -1522,7 +1522,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         internal void Initialize(string connectionId, string name, string connectionProvider, string connectionString)
         {
@@ -1530,7 +1530,7 @@ namespace Open.FileExplorer
             Name = name;
             ConnectionString = connectionString;
             IProvider provider = null;
-            #region ** legacy providers
+            #region legacy providers
             connectionProvider = connectionProvider.Replace("Woopiti.Phone.FileSystem", "Open.FileSystem");
             if (connectionProvider == "Open.FileSystem.PicasaProvider" ||
                 connectionProvider == "Open.FileSystem.GooglePlusProvider")
@@ -1560,7 +1560,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** serialization
+        #region serialization
 
         public System.Xml.Schema.XmlSchema GetSchema()
         {

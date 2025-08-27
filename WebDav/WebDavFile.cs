@@ -1,11 +1,9 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Xml.Linq;
-using Open.FileSystemAsync;
+﻿using Open.FileSystemAsync;
 using Open.WebDav;
+using System.Globalization;
+using System.Xml.Linq;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.WebDav
 {
     public class WebDavFile : FileSystemFile
     {
@@ -32,7 +30,7 @@ namespace Open.FileExplorer
             if (contentType != null && !string.IsNullOrWhiteSpace(contentType.Value))
                 _contentType = contentType.Value;
             else
-                _contentType = MimeType.GetContentTypeFromExtension(Path.GetExtension(name));
+                _contentType = MimeType.GetContentTypeFromExtension(System.IO.Path.GetExtension(name));
             var creationDate = file.Descendants(WebDavClient.CreationDate).FirstOrDefault();
             if (creationDate != null)
                 CreatedDate = DateTime.Parse(creationDate.Value, CultureInfo.InvariantCulture.DateTimeFormat);
@@ -71,7 +69,7 @@ namespace Open.FileExplorer
             }
         }
 
-        internal void SetContentType(string contentType)
+        public void SetContentType(string contentType)
         {
             _contentType = contentType;
         }

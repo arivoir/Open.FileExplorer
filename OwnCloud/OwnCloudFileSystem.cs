@@ -1,22 +1,22 @@
-﻿using Open.FileSystemAsync;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Open.FileExplorer.WebDav;
+using Open.FileSystemAsync;
+using System.Text.Json;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.OwnCloud
 {
     public class OwnCloudFileSystem : WebDavFileSystem
     {
-        #region ** fields
+        #region fields
 
         private static string OwnCloudWebDavPath = "remote.php/webdav";
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         public override Task<AuthenticatonTicket> LogInAsync(IAuthenticationBroker authenticationBroker, string connectionString, string[] scopes, bool requestingDeniedScope, CancellationToken cancellationToken)
         {
-            var ticket = string.IsNullOrWhiteSpace(connectionString) ? new WebDavAuthenticationTicket() : connectionString.DeserializeJson<WebDavAuthenticationTicket>();
+            var ticket = string.IsNullOrWhiteSpace(connectionString) ? new WebDavAuthenticationTicket() : JsonSerializer.Deserialize<WebDavAuthenticationTicket>(connectionString);
             var provider = new OwnCloudProvider();
             return authenticationBroker.FormAuthenticationBrokerAsync(async (server, domain, user, password, ignoreCertErrors) =>
                 {

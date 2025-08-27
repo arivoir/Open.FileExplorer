@@ -12,7 +12,7 @@ namespace Open.FileExplorer
 {
     public class InstagramFileSystem : AuthenticatedFileSystem, ISocialExtension
     {
-        #region ** fields
+        #region fields
 
         public static string ClientId { get; private set; }
         public static string RedirectUri { get; private set; }
@@ -20,7 +20,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         static InstagramFileSystem()
         {
@@ -30,7 +30,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         protected async override Task<AuthenticatonTicket> AuthenticateAsync(IEnumerable<string> scopes = null, bool promptForUserInteraction = true, CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -82,11 +82,11 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         #endregion
 
-        #region ** get info
+        #region get info
 
         protected override DirPathMode DirPathMode
         {
@@ -152,7 +152,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** download
+        #region download
 
         protected override Task<bool> CanOpenFileAsyncOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -168,7 +168,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** social extension
+        #region social extension
 
         public event EventHandler CommentsChanged;
 
@@ -253,7 +253,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         protected override Task<Exception> ProcessExceptionAsync(Exception exc)
         {

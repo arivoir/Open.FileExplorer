@@ -14,7 +14,7 @@ namespace Open.FileExplorer
 {
     public class YouTubeFileSystem : AuthenticatedFileSystem
     {
-        #region ** fields
+        #region fields
 
         public static string ClientId { get; private set; }
         public static string ClientSecret { get; private set; }
@@ -35,7 +35,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         static YouTubeFileSystem()
         {
@@ -46,7 +46,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         public override string[] GetScopes(string dirId)
         {
@@ -111,7 +111,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** get info
+        #region get info
 
         protected override DirPathMode DirPathMode
         {
@@ -294,7 +294,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** upload
+        #region upload
 
         protected override string[] GetAcceptedFileTypesOverride(string dirId, bool includeSubDirectories)
         {
@@ -323,7 +323,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** create
+        #region create
 
         protected override Task<bool> CanCreateDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -341,7 +341,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** move
+        #region move
 
         protected override Task<bool> CanMoveFileOverride(string sourceFileId, string targetDirId, CancellationToken cancellationToken)
         {
@@ -355,7 +355,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** update
+        #region update
 
         protected override async Task<bool> CanUpdateDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -391,7 +391,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** delete
+        #region delete
 
         protected override async Task<bool> CanDeleteFileOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -420,7 +420,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** search
+        #region search
 
         protected override Task<bool> CanSearchAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -442,7 +442,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         protected override Task<Exception> ProcessExceptionAsync(Exception exc)
         {

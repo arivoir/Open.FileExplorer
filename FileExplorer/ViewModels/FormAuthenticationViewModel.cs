@@ -1,5 +1,4 @@
 ﻿using Open.FileSystemAsync;
-using Open.WebDav;
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -9,7 +8,7 @@ namespace Open.FileExplorer
 {
     public class FormAuthenticationViewModel : BaseViewModel
     {
-        #region ** fields
+        #region fields
 
         private string _server = "";
         private string _domain = "";
@@ -19,7 +18,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public FormAuthenticationViewModel()
         {
@@ -32,7 +31,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public string ProviderName { get; set; }
         public string BackgroundBrush { get; set; }
@@ -151,7 +150,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** labels
+        #region labels
 
         public string ApplicationName
         {
@@ -274,7 +273,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
 
         private bool CanAuthorize(object arg)
@@ -302,17 +301,17 @@ namespace Open.FileExplorer
                     {
                         SetError(new ValidationError(AuthenticationFormResources.AuthenticationDeniedMessage), "");
                     }
-                    catch (WebDavException exc)
-                    {
-                        if (exc.StatusCode == 404)
-                        {
-                            SetError(new ValidationError(AuthenticationFormResources.ServerNotFoundMessage), "Server");
-                        }
-                        else
-                        {
-                            SetError(new ValidationError(AuthenticationFormResources.AuthenticationDeniedMessage), "");
-                        }
-                    }
+                    //catch (WebDavException exc)
+                    //{
+                    //    if (exc.StatusCode == 404)
+                    //    {
+                    //        SetError(new ValidationError(AuthenticationFormResources.ServerNotFoundMessage), "Server");
+                    //    }
+                    //    else
+                    //    {
+                    //        SetError(new ValidationError(AuthenticationFormResources.AuthenticationDeniedMessage), "");
+                    //    }
+                    //}
                     catch (Exception exc)
                     {
                         if (exc.Message.Contains("The certificate authority is invalid or incorrect"))

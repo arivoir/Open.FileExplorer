@@ -5,13 +5,13 @@ namespace Open.FileExplorer
 {
     public class OneDriveDirectoryViewModel : FileSystemDirectoryViewModel
     {
-        #region ** fields
+        #region fields
 
         private string _oldDescription;
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public OneDriveDirectoryViewModel(FileExplorerViewModel fileExplorer, string dirId, FileSystemItem item)
             : base(fileExplorer, dirId, item)
@@ -20,7 +20,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public string Description
         {
@@ -68,7 +68,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** templates
+        #region templates
 
         public override string FormTemplate
         {
@@ -80,7 +80,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** labels
+        #region labels
 
         public string DescriptionLabel
         {
@@ -92,7 +92,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** versions
+        #region versions
 
         public override bool HasChanges()
         {

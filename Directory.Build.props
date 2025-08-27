@@ -1,0 +1,9 @@
+<Project>
+
+	<PropertyGroup>
+		<Authors>Alvaro Rivoir</Authors>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Version>1.0.0</Version>
+	</PropertyGroup>
+
+</Project>

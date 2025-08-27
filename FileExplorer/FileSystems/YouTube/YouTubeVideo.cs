@@ -6,7 +6,7 @@ namespace Open.FileExplorer
 {
     public class YouTubeVideo : FileSystemFile
     {
-        #region ** initialization
+        #region initialization
 
         public YouTubeVideo(string id, string name, string contentType)
         {
@@ -89,7 +89,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
 
         public string Description { get; set; }

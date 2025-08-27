@@ -4,7 +4,7 @@ namespace Open.FileExplorer
 {
     public class GoogleDriveDirectoryViewModel : FileSystemDirectoryViewModel
     {
-        #region ** initialization
+        #region initialization
 
         public GoogleDriveDirectoryViewModel(FileExplorerViewModel fileExplorer, string dirId, FileSystemItem item)
             : base(fileExplorer, dirId, item)

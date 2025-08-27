@@ -15,13 +15,13 @@ namespace Open.FileExplorer
     //[CompilerGenerated()]
     public class Transaction : IDisposable
     {
-        #region ** fields
+        #region fields
 
         private SemaphoreSlim _semaphore;
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public Transaction(ITransactionManager transactionManager, int maxParallelThreads = 10)
         {
@@ -33,7 +33,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public ITransactionManager TransactionManager { get; private set; }
 
@@ -81,7 +81,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         public bool CanBeCanceled
         {
@@ -199,7 +199,7 @@ namespace Open.FileExplorer
 
     }
 
-    #region ** operations
+    #region operations
 
     public class Operation
     {

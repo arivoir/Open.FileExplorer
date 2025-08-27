@@ -51,7 +51,7 @@ namespace Open.FileExplorer
             return false;
         }
 
-        #region ** actions
+        #region actions
 
         public async override Task<IEnumerable<FileSystemAction>> GetActions(FileSystemActionContext context, string targetDirectoryId)
         {

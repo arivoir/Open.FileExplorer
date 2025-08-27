@@ -178,7 +178,7 @@ namespace Open.FileExplorer
             return true;
         }
 
-        #region ** actions
+        #region actions
 
         public virtual async Task<IEnumerable<FileSystemAction>> GetActions(FileSystemActionContext context, string targetDirectoryId)
         {

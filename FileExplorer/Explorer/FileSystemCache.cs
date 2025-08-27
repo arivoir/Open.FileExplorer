@@ -14,13 +14,13 @@ namespace Open.FileExplorer
 {
     public class FileSystemCache
     {
-        #region ** fields
+        #region fields
 
         private static TimeSpan SAVE_DELAY = TimeSpan.FromSeconds(5);
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public FileSystemCache(IFileSystemStorage storage,
             string metadataPath,
@@ -36,7 +36,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public IFileSystemStorage Storage { get; private set; }
 
@@ -46,7 +46,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** metadata
+        #region metadata
 
         Dictionary<string, IDataCollection<FileSystemDirectory>> _pendingDirectories = new Dictionary<string, IDataCollection<FileSystemDirectory>>();
         Dictionary<string, IDataCollection<FileSystemFile>> _pendingFiles = new Dictionary<string, IDataCollection<FileSystemFile>>();
@@ -208,7 +208,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** thumbnails and files
+        #region thumbnails and files
 
         public async Task<bool> ContainsSavedFileAsync(string path)
         {
@@ -344,7 +344,7 @@ namespace Open.FileExplorer
             return await Storage.TryGetFileAsync(path);
         }
 
-        #region ** clear
+        #region clear
 
         public async Task DeleteFolderAsync(string uniqueDirPath)
         {
@@ -480,7 +480,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** space
+        #region space
 
         public async Task<long> GetMetadataUsedSpaceAsync()
         {

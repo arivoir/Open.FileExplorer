@@ -5,7 +5,7 @@ namespace Open.FileExplorer
 {
     public class TwitterFileViewModel : FileSystemFileViewModel
     {
-        #region ** initialization
+        #region initialization
 
         public TwitterFileViewModel(FileExplorerViewModel fileExplorer, string dirId, FileSystemItem item, IFileInfo file)
             : base(fileExplorer, dirId, item, file)

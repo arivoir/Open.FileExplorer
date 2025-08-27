@@ -14,7 +14,7 @@ namespace Open.FileExplorer
 {
     public class FileSystemFileViewModel : FileSystemItemViewModel
     {
-        #region ** fields
+        #region fields
 
         private bool? _canGetFileImage = null;
 #if HOLD_MEMORY
@@ -34,7 +34,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public FileSystemFileViewModel(IFileInfo fileInfo)
             : this(null, null, null, fileInfo)
@@ -69,7 +69,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
 
         public IFileInfo File { get; private set; }
@@ -196,7 +196,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** templates
+        #region templates
 
         public override string ItemTemplate
         {
@@ -290,7 +290,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
 
         private bool? IsContentVisible
@@ -334,7 +334,7 @@ namespace Open.FileExplorer
             }
         }
 
-        #region ** file system concurrency access
+        #region file system concurrency access
 
         protected override async Task<bool> CanGetThumbnailAsyncOverride(CancellationToken cancellationToken)
         {
@@ -665,7 +665,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** labels
+        #region labels
 
         public string LikeLabel
         {
@@ -693,7 +693,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** comments
+        #region comments
 
         public async Task LoadDefaultComment()
         {
@@ -845,7 +845,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** likes
+        #region likes
 
         private bool _updatingLike = false;
 
@@ -909,7 +909,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** colors
+        #region colors
 
         private static Dictionary<MimeType, string> _fileColors = new Dictionary<MimeType, string>();
         private static string[] _extraFileColors = new string[] { "#FFB9452B", "#FF665FB0", "#FF1C8097", "#FF8D3BBB", "#FFBF4AA4" };

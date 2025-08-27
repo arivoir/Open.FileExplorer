@@ -15,7 +15,7 @@ namespace Open.FileExplorer
 {
     public class BoxFileSystem : UnifiedItemsFileSystem, ISocialExtension, ISearchExtension
     {
-        #region ** fields
+        #region fields
 
         public static string ClientId { get; private set; }
         public static string ClientSecret { get; private set; }
@@ -26,7 +26,7 @@ namespace Open.FileExplorer
         private string _rootFolderId = "0";
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         static BoxFileSystem()
         {
@@ -37,14 +37,14 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public override string[] AllowedDirectorySortFields => new string[] { "Name", "Size", "CreatedDate" };
         public override string[] AllowedFileSortFields => new string[] { "Name", "Size", "CreatedDate" };
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         public override async Task<AuthenticatonTicket> LogInAsync(IAuthenticationBroker authenticationBroker, string connectionString, string[] scopes, bool requestingDeniedScope, CancellationToken cancellationToken)
         {
@@ -85,7 +85,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** get info
+        #region get info
 
         protected override DirPathMode DirPathMode
         {
@@ -190,7 +190,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** upload
+        #region upload
 
         protected override Task<bool> CanWriteFileAsyncOverride(string path, CancellationToken cancellationToken)
         {
@@ -215,7 +215,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** download
+        #region download
 
         protected override Task<bool> CanOpenFileAsyncOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -231,7 +231,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** delete
+        #region delete
 
         protected override Task<bool> CanDeleteDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -259,7 +259,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** create
+        #region create
 
         protected override Task<bool> CanCreateDirectoryOverride(string parentDirId, CancellationToken cancellationToken)
         {
@@ -280,7 +280,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** copy
+        #region copy
 
         protected override Task<bool> CanCopyDirectoryOverride(string sourceDirId, string targetDirId, CancellationToken cancellationToken)
         {
@@ -320,7 +320,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** move
+        #region move
 
         protected override Task<bool> CanMoveDirectoryOverride(string sourceDirId, string targetDirId, CancellationToken cancellationToken)
         {
@@ -360,7 +360,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** update
+        #region update
 
         protected override Task<bool> CanUpdateDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -398,7 +398,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** search
+        #region search
 
         protected override Task<bool> CanSearchAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -429,7 +429,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** social extension
+        #region social extension
 
         public event EventHandler CommentsChanged;
 
@@ -503,7 +503,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         private string GetFolderId(string dirId)
         {

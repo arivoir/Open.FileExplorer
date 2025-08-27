@@ -49,7 +49,7 @@ namespace Open.FileExplorer
             return new TwitterFileViewModel(FileExplorer, dirId, item, file);
         }
 
-        #region ** actions
+        #region actions
 
         public async override Task<IEnumerable<FileSystemAction>> GetActions(FileSystemActionContext context, string targetDirectoryId)
         {

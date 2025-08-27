@@ -6,7 +6,7 @@ namespace Open.FileExplorer
 {
     public class FileSystemCurrency : IFileSystemCurrency
     {
-        #region ** fields
+        #region fields
 
         private string _currentDirId = null;
         private HardStack<string> _backwardDirectories = new HardStack<string>();
@@ -14,7 +14,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public FileSystemCurrency(FileExplorerViewModel explorer)
         {
@@ -23,7 +23,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public FileExplorerViewModel FileExplorer { get; private set; }
 
@@ -45,7 +45,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** current directory
+        #region current directory
 
         public virtual string GetCurrentDirectory()
         {

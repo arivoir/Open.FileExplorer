@@ -1,11 +1,9 @@
-﻿using System;
-using System.Globalization;
-using System.Linq;
-using System.Xml.Linq;
-using Open.FileSystemAsync;
+﻿using Open.FileSystemAsync;
 using Open.WebDav;
+using System.Globalization;
+using System.Xml.Linq;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.WebDav
 {
     public class WebDavDirectory : FileSystemDirectory
     {

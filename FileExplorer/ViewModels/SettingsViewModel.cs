@@ -8,7 +8,7 @@ namespace Open.FileExplorer
 {
     public class SettingsViewModel : BaseViewModel
     {
-        #region ** fields
+        #region fields
 
         protected TaskCommand _clearCacheCommand;
         private List<LanguageViewModel> _languages;
@@ -23,7 +23,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public SettingsViewModel(FileExplorerViewModel fileExplorer)
         {
@@ -33,7 +33,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public FileExplorerViewModel FileExplorer { get; private set; }
 
@@ -158,7 +158,7 @@ namespace Open.FileExplorer
             }
         }
 
-        #region ** passcode
+        #region passcode
 
         public static bool IsPasscodeRequired
         {
@@ -373,7 +373,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** labels
+        #region labels
 
         public string ApplicationName
         {
@@ -496,7 +496,7 @@ namespace Open.FileExplorer
         }
         #endregion
 
-        #region ** implementation
+        #region implementation
 
 
         public TaskCommand ClearCacheCommand

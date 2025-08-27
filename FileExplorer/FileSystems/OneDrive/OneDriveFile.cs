@@ -6,7 +6,7 @@ namespace Open.FileExplorer
 {
     public class OneDriveFile : FileSystemFile
     {
-        #region ** initialization
+        #region initialization
 
         public OneDriveFile(string id, string name, string contentType)
         {
@@ -62,7 +62,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public string Url { get; private set; }
         public string Description { get; set; }

@@ -10,7 +10,7 @@ namespace Open.FileExplorer
 {
     public class FileSystemItemViewModel : BaseViewModel
     {
-        #region ** fields
+        #region fields
 
         protected string _oldName;
         private string _oldPermissions;
@@ -28,7 +28,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public FileSystemItemViewModel(FileExplorerViewModel fileExplorer, string parentDirId, FileSystemItem item)
         {
@@ -47,7 +47,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public FileExplorerViewModel FileExplorer { get; private set; }
 
@@ -345,7 +345,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** templates
+        #region templates
 
         public virtual string ItemTemplate
         {
@@ -415,7 +415,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** editing
+        #region editing
 
         public virtual void BeginChanging()
         {
@@ -451,7 +451,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** labels
+        #region labels
 
         public string NameLabel
         {
@@ -487,7 +487,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         public virtual void Load()
         {

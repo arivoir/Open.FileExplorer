@@ -6,7 +6,7 @@ namespace Open.FileExplorer
 {
     public class ConnectionsViewModel : BaseViewModel
     {
-        #region ** fields
+        #region fields
 
         private static List<ProviderViewModel> _providers;
 
@@ -27,7 +27,7 @@ namespace Open.FileExplorer
             return new ProviderViewModel(this, provider);
         }
 
-        #region ** object model
+        #region object model
 
         public FileExplorerViewModel FileExplorer { get; set; }
         public string ApplicationName

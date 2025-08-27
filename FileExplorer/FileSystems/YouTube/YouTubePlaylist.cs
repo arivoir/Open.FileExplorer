@@ -5,7 +5,7 @@ namespace Open.FileExplorer
 {
     public class YoutubePlaylist : FileSystemDirectory
     {
-        #region ** initialization
+        #region initialization
 
         public YoutubePlaylist(string id, string name, string privacyStatus)
         {
@@ -29,7 +29,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public string Description { get; set; }
         public string[] Tags { get; set; }

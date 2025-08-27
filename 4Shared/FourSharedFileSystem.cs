@@ -1,23 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Xml.Linq;
+﻿using Open.FileExplorer.WebDav;
 using Open.FileSystemAsync;
 using Open.WebDav;
+using System.Text.Json;
+using System.Xml.Linq;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.FourShared
 {
     public class FourSharedFileSystem : WebDavFileSystem
     {
-        #region ** fields
+        #region fields
 
         private static string FourSharedServer = "https://webdav.4shared.com";
         private static string FourSharedServerPath = "/";
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public FourSharedFileSystem()
         {
@@ -27,7 +25,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         protected override async Task<AuthenticatonTicket> AuthenticateAsync(IEnumerable<string> scopes = null, bool promptForUserInteraction = true, CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -40,7 +38,7 @@ namespace Open.FileExplorer
         {
             try
             {
-                var ticket = refreshToken.DeserializeJson<WebDavAuthenticationTicket>();
+                var ticket = JsonSerializer.Deserialize<WebDavAuthenticationTicket>(refreshToken);
                 var client = new WebDavClient(FourSharedServer, ticket.Domain, ticket.User, ticket.Password);
                 var options = await client.OptionsAsync(GetDirRelativePath(FourSharedServerPath, ""), cancellationToken);
                 return new AuthenticatonTicket { AuthToken = refreshToken, Tag = options };
@@ -50,7 +48,7 @@ namespace Open.FileExplorer
 
         public override Task<AuthenticatonTicket> LogInAsync(IAuthenticationBroker authenticationBroker, string connectionString, string[] scopes, bool requestingDeniedScope, CancellationToken cancellationToken)
         {
-            var ticket = string.IsNullOrWhiteSpace(connectionString) ? new WebDavAuthenticationTicket() : connectionString.DeserializeJson<WebDavAuthenticationTicket>();
+            var ticket = string.IsNullOrWhiteSpace(connectionString) ? new WebDavAuthenticationTicket() : JsonSerializer.Deserialize<WebDavAuthenticationTicket>(connectionString);
             var provider = new FourSharedProvider();
             return authenticationBroker.FormAuthenticationBrokerAsync(async (server, domain, user, password, ignoreCertErrors) =>
                 {
@@ -59,7 +57,7 @@ namespace Open.FileExplorer
                         var client = new WebDavClient(FourSharedServer, domain, user, password);
                         var r = await client.PropFindAsync(FourSharedServerPath, WebDavDepth.Zero);
                         var options = await client.OptionsAsync(GetDirRelativePath(FourSharedServerPath, ""), CancellationToken.None);
-                        return new AuthenticatonTicket { AuthToken = new WebDavAuthenticationTicket { User = user, Password = password }.SerializeJson(), Tag = options };
+                        return new AuthenticatonTicket { AuthToken = JsonSerializer.Serialize(new WebDavAuthenticationTicket { User = user, Password = password }), Tag = options };
                     }
                     catch (Exception exc) { throw ProcessException(exc); }
                 },
@@ -74,12 +72,12 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         protected override WebDavFile CreateFile(XElement responseItem)
         {
             var file = base.CreateFile(responseItem);
-            file.SetContentType(MimeType.GetContentTypeFromExtension(Path.GetExtension(file.Name)));
+            file.SetContentType(MimeType.GetContentTypeFromExtension(System.IO.Path.GetExtension(file.Name)));
             return file;
         }
 

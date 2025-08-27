@@ -9,7 +9,7 @@ namespace Open.FileExplorer
     /// </summary>
     public class BoxProvider : Provider
     {
-        #region ** object model
+        #region object model
 
         public override string Name
         {
@@ -23,7 +23,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** methods
+        #region methods
 
         public override AuthenticatedFileSystem CreateFileSystem(IAuthenticationManager authenticationManager)
         {

@@ -5,6 +5,18 @@ VisualStudioVersion = 17.14.36408.4
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.FileExplorer", "FileExplorer\Open.FileExplorer.csproj", "{C467EE56-809F-3655-B78A-9001CA90FFF4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.FileExplorer.WebDav", "WebDav\Open.FileExplorer.WebDav.csproj", "{E0BD0DDE-1A90-9630-35B0-FCF3F8C9D982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.FileExplorer.CloudMe", "CloudMe\Open.FileExplorer.CloudMe.csproj", "{CEA9C127-C4E0-3EB1-FAB2-D25814E66EED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.FileExplorer.4Shared", "4Shared\Open.FileExplorer.4Shared.csproj", "{DEEC3CCB-40D6-C716-3134-408EF2FCC8F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.FileExplorer.HiDrive", "HiDrive\Open.FileExplorer.HiDrive.csproj", "{A4CF8D4C-D0A9-8065-3D89-1324ACE66500}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.FileExplorer.OwnCloud", "OwnCloud\Open.FileExplorer.OwnCloud.csproj", "{60FA4B96-5312-0FD6-3905-C2727C9232D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Open.FileExplorer.Sharepoint", "Sharepoint\Open.FileExplorer.Sharepoint.csproj", "{5B3F5660-19EE-A91E-1239-9642F8337BC0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{C467EE56-809F-3655-B78A-9001CA90FFF4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C467EE56-809F-3655-B78A-9001CA90FFF4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C467EE56-809F-3655-B78A-9001CA90FFF4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0BD0DDE-1A90-9630-35B0-FCF3F8C9D982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0BD0DDE-1A90-9630-35B0-FCF3F8C9D982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0BD0DDE-1A90-9630-35B0-FCF3F8C9D982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0BD0DDE-1A90-9630-35B0-FCF3F8C9D982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEA9C127-C4E0-3EB1-FAB2-D25814E66EED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEA9C127-C4E0-3EB1-FAB2-D25814E66EED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEA9C127-C4E0-3EB1-FAB2-D25814E66EED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEA9C127-C4E0-3EB1-FAB2-D25814E66EED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEEC3CCB-40D6-C716-3134-408EF2FCC8F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEEC3CCB-40D6-C716-3134-408EF2FCC8F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEEC3CCB-40D6-C716-3134-408EF2FCC8F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEEC3CCB-40D6-C716-3134-408EF2FCC8F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4CF8D4C-D0A9-8065-3D89-1324ACE66500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4CF8D4C-D0A9-8065-3D89-1324ACE66500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4CF8D4C-D0A9-8065-3D89-1324ACE66500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4CF8D4C-D0A9-8065-3D89-1324ACE66500}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60FA4B96-5312-0FD6-3905-C2727C9232D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60FA4B96-5312-0FD6-3905-C2727C9232D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60FA4B96-5312-0FD6-3905-C2727C9232D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60FA4B96-5312-0FD6-3905-C2727C9232D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3F5660-19EE-A91E-1239-9642F8337BC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3F5660-19EE-A91E-1239-9642F8337BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3F5660-19EE-A91E-1239-9642F8337BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3F5660-19EE-A91E-1239-9642F8337BC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

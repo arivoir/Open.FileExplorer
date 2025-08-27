@@ -12,7 +12,7 @@ namespace Open.FileExplorer
 {
     public class SearchViewModel : BaseViewModel
     {
-        #region ** fields
+        #region fields
 
         private string _query = "";
         private IDataCollection<SearchItemViewModel> _items;
@@ -22,7 +22,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public SearchViewModel(FileExplorerViewModel fileExplorer)
         {
@@ -33,7 +33,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public FileExplorerViewModel FileExplorer { get; private set; }
 
@@ -185,7 +185,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** labels
+        #region labels
 
         public string ApplicationName
         {
@@ -269,7 +269,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         protected virtual async Task OnSearchingAsync()
         {

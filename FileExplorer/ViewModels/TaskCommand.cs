@@ -15,7 +15,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TaskCommand"/> class.
@@ -50,7 +50,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public bool IsExecuting { get; private set; }
 
@@ -66,7 +66,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         public bool CanExecute(object parameter = null)
         {

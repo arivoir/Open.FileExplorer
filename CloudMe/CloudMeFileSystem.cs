@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Open.FileExplorer.WebDav;
 using Open.FileSystemAsync;
 using Open.WebDav;
+using System.Text.Json;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.CloudMe
 {
     public class CloudMeFileSystem : WebDavFileSystem
     {
-        #region ** fields
+        #region fields
 
         private static string CloudMeServer = "http://webdav.cloudme.com";
         private static string CloudMeServerPath = "/{0}/CloudDrive/Documents/";
@@ -18,7 +15,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public CloudMeFileSystem()
         {
@@ -27,12 +24,12 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         protected async override Task<AuthenticatonTicket> AuthenticateAsync(IEnumerable<string> scopes = null, bool promptForUserInteraction = true, CancellationToken cancellationToken = default(CancellationToken))
         {
             var ticket = await base.AuthenticateAsync(scopes, promptForUserInteraction, cancellationToken);
-            var webDavTicket = ticket.AuthToken.DeserializeJson<WebDavAuthenticationTicket>();
+            var webDavTicket = JsonSerializer.Deserialize<WebDavAuthenticationTicket>(ticket.AuthToken);
             ServerPath = string.Format(CloudMeServerPath, webDavTicket.User);
             _options = ticket.Tag as WebDavOptions;
             return ticket;
@@ -42,7 +39,7 @@ namespace Open.FileExplorer
         {
             try
             {
-                var ticket = refreshToken.DeserializeJson<WebDavAuthenticationTicket>();
+                var ticket = JsonSerializer.Deserialize<WebDavAuthenticationTicket>(refreshToken);
                 var client = new WebDavClient(CloudMeServer, ticket.Domain, ticket.User, ticket.Password);
                 var options = await client.OptionsAsync(GetDirRelativePath(string.Format(CloudMeServerPath, ticket.User), ""), cancellationToken);
                 return new AuthenticatonTicket { AuthToken = refreshToken, Tag = options };
@@ -52,7 +49,7 @@ namespace Open.FileExplorer
 
         public override Task<AuthenticatonTicket> LogInAsync(IAuthenticationBroker authenticationBroker, string connectionString, string[] scopes, bool requestingDeniedScope, CancellationToken cancellationToken)
         {
-            var ticket = string.IsNullOrWhiteSpace(connectionString) ? new WebDavAuthenticationTicket() : connectionString.DeserializeJson<WebDavAuthenticationTicket>();
+            var ticket = string.IsNullOrWhiteSpace(connectionString) ? new WebDavAuthenticationTicket() : JsonSerializer.Deserialize<WebDavAuthenticationTicket>(connectionString);
             var provider = new CloudMeProvider();
             return authenticationBroker.FormAuthenticationBrokerAsync(async (server, domain, user, password, ignoreCertErrors) =>
                 {
@@ -61,7 +58,7 @@ namespace Open.FileExplorer
                         var client = new WebDavClient(CloudMeServer, domain, user, password);
                         var r = await client.PropFindAsync(string.Format(CloudMeServerPath, user), WebDavDepth.Zero);
                         var options = await client.OptionsAsync(GetDirRelativePath(string.Format(CloudMeServerPath, user), ""), CancellationToken.None);
-                        return new AuthenticatonTicket { AuthToken = new WebDavAuthenticationTicket { User = user, Password = password }.SerializeJson(), Tag = options };
+                        return new AuthenticatonTicket { AuthToken = JsonSerializer.Serialize(new WebDavAuthenticationTicket { User = user, Password = password }), Tag = options };
                     }
                     catch (Exception exc) { throw ProcessException(exc); }
                 },
@@ -76,7 +73,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         public override Task<bool> CanGetDirectoryLinkAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -85,7 +82,7 @@ namespace Open.FileExplorer
 
         protected override Task<Uri> GetDirectoryLinkAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
-            return Task.FromResult(new Uri(string.Format("https://www.cloudme.com/en#sync:/Documents/{0}", string.Join("/", Path.SplitPath(dirId).Select(s => Uri.EscapeUriString(s)).ToArray()))));
+            return Task.FromResult(new Uri(string.Format("https://www.cloudme.com/en#sync:/Documents/{0}", string.Join("/", FileSystemAsync.Path.SplitPath(dirId).Select(s => Uri.EscapeUriString(s)).ToArray()))));
         }
 
         protected override Task<bool> CanWriteFileAsyncOverride(string dirId, CancellationToken cancellationToken)

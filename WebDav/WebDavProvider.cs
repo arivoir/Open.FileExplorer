@@ -1,33 +1,31 @@
 ﻿using Open.FileSystemAsync;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.WebDav
 {
     /// <summary>
     /// Provides methods to create a new connection to Google Drive.
     /// </summary>
-    public class SharepointProvider : WebDavProvider
+    public class WebDavProvider : Provider
     {
-        #region ** object model
+        #region object model
 
         public override string Name
         {
-            get { return "Sharepoint"; }
+            get { return "WebDav"; }
         }
 
         public override string Color
         {
-            get { return "#FF147EE5"; }
+            get { return "#FF33427E"; }
         }
 
         #endregion
 
-        #region ** methods
+        #region methods
 
         public override AuthenticatedFileSystem CreateFileSystem(IAuthenticationManager authenticationManager)
         {
-            return new SharepointFileSystem() { AuthenticationManager = authenticationManager };
+            return new WebDavFileSystem() { AuthenticationManager = authenticationManager };
         }
 
         #endregion

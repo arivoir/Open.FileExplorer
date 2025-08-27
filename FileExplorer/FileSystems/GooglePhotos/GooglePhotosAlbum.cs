@@ -6,7 +6,7 @@ namespace Open.FileExplorer
 {
     public class GooglePhotosAlbum : FileSystemDirectory
     {
-        #region ** initialization
+        #region initialization
 
         public GooglePhotosAlbum(string id, string name)
         {
@@ -43,7 +43,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public string Uri { get; private set; }
         public string ETag { get; private set; }

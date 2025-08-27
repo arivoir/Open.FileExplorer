@@ -15,7 +15,7 @@ namespace Open.FileExplorer
 {
     public class GoogleDriveFileSystem : AuthenticatedFileSystem, ISearchExtension
     {
-        #region ** fields
+        #region fields
 
         public static string ClientId { get; private set; }
         public static string ClientSecret { get; private set; }
@@ -34,7 +34,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         static GoogleDriveFileSystem()
         {
@@ -87,7 +87,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public const string Root = "root";
         public const string SharedWithMe = "sharedWithMe";
@@ -110,7 +110,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         public override string[] GetScopes(string dirId)
         {
@@ -159,7 +159,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** get info
+        #region get info
 
         protected override DirPathMode DirPathMode
         {
@@ -450,7 +450,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** download
+        #region download
 
         protected override async Task<bool> CanOpenFileAsyncOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -469,7 +469,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** upload
+        #region upload
 
         protected override Task<bool> CanWriteFileAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -553,7 +553,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** create
+        #region create
 
         protected override Task<bool> CanCreateDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -576,7 +576,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** copy
+        #region copy
 
         protected override async Task<bool> CanCopyFileOverride(string sourceFileId, string targetDirId, CancellationToken cancellationToken)
         {
@@ -597,7 +597,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** move
+        #region move
 
         protected override async Task<bool> CanMoveDirectoryOverride(string sourceDirId, string targetDirId, CancellationToken cancellationToken)
         {
@@ -646,7 +646,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** update
+        #region update
 
         protected override async Task<bool> CanUpdateDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -679,7 +679,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** delete
+        #region delete
 
         protected override Task<bool> CanDeleteDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -778,7 +778,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** search
+        #region search
 
         protected override Task<bool> CanSearchAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -810,7 +810,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         protected override Task<Exception> ProcessExceptionAsync(Exception exc)
         {

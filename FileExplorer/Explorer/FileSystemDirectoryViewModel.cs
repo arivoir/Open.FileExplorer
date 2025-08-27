@@ -10,13 +10,13 @@ namespace Open.FileExplorer
 {
     public class FileSystemDirectoryViewModel : FileSystemItemViewModel
     {
-        #region ** fields
+        #region fields
 
         private long? _size = null;
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public FileSystemDirectoryViewModel(FileExplorerViewModel fileExplorer, string dirId, FileSystemItem item)
             : base(fileExplorer, dirId, item)
@@ -26,7 +26,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public virtual string Count
         {
@@ -37,7 +37,7 @@ namespace Open.FileExplorer
             }
         }
 
-        #region ** Size
+        #region Size
 
         public override bool SizeVisible
         {
@@ -82,7 +82,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** templates
+        #region templates
 
         public bool NameVisible
         {
@@ -207,7 +207,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** labels
+        #region labels
 
         public string CalculateLabel
         {

@@ -18,7 +18,7 @@ namespace Open.FileExplorer
 {
     public class FileExplorerViewModel : BaseViewModel
     {
-        #region ** fields
+        #region fields
 
         private int _selectedCount;
         private FileSystemItemViewModel _lastSelectedItem;
@@ -39,7 +39,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public FileExplorerViewModel(IAppService appService, IFileSystemAsync fileSystem = null, IFileSystemCurrency currencyManager = null)
         {
@@ -69,7 +69,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         public TransactionManager TransactionManager { get; private set; }
         public TransactionsViewModel TransactionsViewModel { get; private set; }
@@ -124,7 +124,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** lifecycle
+        #region lifecycle
 
         public bool IsStarting { get; private set; }
         public bool IsStarted { get; private set; }
@@ -361,7 +361,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** populate items
+        #region populate items
 
         public FileViewCollection Items { get; private set; }
 
@@ -545,7 +545,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** async events
+        #region async events
 
         private SemaphoreSlim _enterExitSemaphore = new SemaphoreSlim(1);
         private bool isIn = true;
@@ -629,7 +629,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** selection
+        #region selection
 
         public bool IsItemSelected(FileSystemItemViewModel item)
         {
@@ -905,7 +905,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** transactions
+        #region transactions
 
         public string Status { get; private set; } = "";
 
@@ -1022,7 +1022,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** navigation
+        #region navigation
 
         public TaskCommand GoBackCommand
         {
@@ -1084,7 +1084,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** public methods
+        #region public methods
 
         protected virtual Task<string> GetEmptyDirectoryMessage()
         {
@@ -1132,7 +1132,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** cache
+        #region cache
 
 
         internal Task<bool> ExistsDirectoryAsync(string dirId, CancellationToken cancellationToken)
@@ -1464,7 +1464,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** providers
+        #region providers
 
         protected virtual ConnectionsViewModel CreateConnectionsViewModel()
         {
@@ -1499,9 +1499,9 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** operations
+        #region operations
 
-        #region ** open
+        #region open
 
         public async Task OpenDirectoryAsync(string dirId, string dirName, object placementTarget, CancellationToken cancellationToken)
         {
@@ -1639,7 +1639,7 @@ namespace Open.FileExplorer
             }
         }
 
-        #region ** create directory
+        #region create directory
 
 
         public async Task<bool> CanCreateDirectoryAsync(FileSystemActionContext context)
@@ -1707,7 +1707,7 @@ namespace Open.FileExplorer
         }
         #endregion
 
-        #region ** download
+        #region download
 
 
         public async Task<bool> CanDownloadAsync(FileSystemActionContext context)
@@ -1758,7 +1758,7 @@ namespace Open.FileExplorer
                         (ct) => DetermineCollisions(context.Items, localFileSystem, "", ct));
                     if (collisions.Count > 0)
                     {
-                        #region ** message
+                        #region message
                         string message;
                         if (collisions.Count() == 1 && collisions.First().Item3.IsDirectory)
                         {
@@ -1809,7 +1809,7 @@ namespace Open.FileExplorer
                     if (!await AppService.ShowQuestionAsync(question))
                         throw new OperationCanceledException();
 
-                    #region ** Creates directory structure & download files
+                    #region Creates directory structure & download files
 
                     try
                     {
@@ -2065,7 +2065,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** upload
+        #region upload
 
         public async Task<bool> CanUploadAsync(FileSystemActionContext context)
         {
@@ -2194,7 +2194,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** delete
+        #region delete
 
         public async Task DeleteDirectoryAsync(FileSystemActionContext context, string questionSingular, string questionPlural, Func<string, Task> afterDirectoryDeleted, CancellationToken cancellationToken)
         {
@@ -2338,7 +2338,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** copy
+        #region copy
 
         public async Task<bool> CanCopyAsync(FileSystemActionContext context)
         {
@@ -2436,7 +2436,7 @@ namespace Open.FileExplorer
                     (ct) => DetermineCollisions(context.Items, FileSystem, pickedDirId, ct));
                 if (collisions.Count > 0)
                 {
-                    #region ** message
+                    #region message
                     string message;
                     if (collisions.Count() == 1 && collisions.First().Item3.IsDirectory)
                     {
@@ -2461,7 +2461,7 @@ namespace Open.FileExplorer
                 var indirectExecFiles = indirectExecItems.Where(i => !i.Item.IsDirectory).ToList();
                 var indirectExecDirectories = indirectExecItems.Where(i => i.Item.IsDirectory).ToList();
                 var downloadableFiles = (await indirectExecFiles.WhereAsync(async f => await FileSystem.CanOpenFileAsync(f.ItemId, cancellationToken))).ToList();
-                #region ** show confirmation message
+                #region show confirmation message
                 if (indirectExecItems.Count > 0)
                 {
                     int filesCount = downloadableFiles.Count();
@@ -2507,7 +2507,7 @@ namespace Open.FileExplorer
 
                 var namesDict = new Dictionary<string, List<string>>();
 
-                #region ** Creates directory structure, copy & move files
+                #region Creates directory structure, copy & move files
                 try
                 {
                     foreach (var item in items)
@@ -2703,7 +2703,7 @@ namespace Open.FileExplorer
         }
 
 
-        #region ** creates the execution plan
+        #region creates the execution plan
 
         private async Task<List<Tuple<string, string, FileSystemItem>>> DetermineCollisions(IEnumerable<Tuple<string, string, FileSystemItem>> enumerable, IFileSystemAsync targetFileSystem, string targetDirId, CancellationToken cancellationToken)
         {
@@ -2799,7 +2799,7 @@ namespace Open.FileExplorer
         #endregion
         #endregion
 
-        #region ** properties/update
+        #region properties/update
 
         public async Task<FileSystemDirectory> DirectoryPropertiesAsync(FileSystemActionContext context, string caption, CancellationToken cancellationToken, object placementTarget)
         {

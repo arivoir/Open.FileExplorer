@@ -5,7 +5,7 @@ namespace Open.FileExplorer
 {
     public class GoogleDriveFileViewModel : FileSystemFileViewModel
     {
-        #region ** initialization
+        #region initialization
 
         public GoogleDriveFileViewModel(FileExplorerViewModel fileExplorer, string dirId, FileSystemItem item, IFileInfo file)
             : base(fileExplorer, dirId, item, file)
@@ -56,7 +56,7 @@ namespace Open.FileExplorer
             return Task.FromResult("SmallFileTemplateWithoutName");
         }
 
-        #region ** properties
+        #region properties
 
         public override string Extension
         {

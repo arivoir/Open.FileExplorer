@@ -2,22 +2,17 @@
 using Open.FileSystemAsync;
 using Open.IO;
 using Open.WebDav;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Net;
 using System.Runtime.Serialization;
-using System.Threading;
-using System.Threading.Tasks;
+using System.Text.Json;
 using System.Xml.Linq;
 using Path = Open.FileSystemAsync.Path;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.WebDav
 {
     public class WebDavFileSystem : UnifiedItemsFileSystem
     {
-        #region ** fields
+        #region fields
 
         protected string Server { get; set; }
         protected string ServerPath { get; set; }
@@ -26,7 +21,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         static WebDavFileSystem()
         {
@@ -35,7 +30,7 @@ namespace Open.FileExplorer
         protected override async Task<AuthenticatonTicket> AuthenticateAsync(IEnumerable<string> scopes = null, bool promptForUserInteraction = true, CancellationToken cancellationToken = default(CancellationToken))
         {
             var ticket = await base.AuthenticateAsync(scopes, promptForUserInteraction, cancellationToken);
-            var webDavTicket = ticket.AuthToken.DeserializeJson<WebDavAuthenticationTicket>();
+            var webDavTicket = JsonSerializer.Deserialize<WebDavAuthenticationTicket>(ticket.AuthToken);
             var uri = new Uri(webDavTicket.Server ?? Server);
             Server = uri.GetComponents(UriComponents.SchemeAndServer, UriFormat.Unescaped);
             ServerPath = uri.AbsolutePath;
@@ -46,12 +41,12 @@ namespace Open.FileExplorer
         protected new async Task<WebDavAuthenticationTicket> GetAccessTokenAsync(bool promptForUserInteraction, CancellationToken cancellationToken)
         {
             var ticket = await AuthenticateAsync(null, promptForUserInteraction, cancellationToken);
-            return ticket.AuthToken.DeserializeJson<WebDavAuthenticationTicket>();
+            return JsonSerializer.Deserialize<WebDavAuthenticationTicket>(ticket.AuthToken);
         }
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         protected override bool IsFileNameExtensionRequired
         {
@@ -66,11 +61,11 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         public override async Task<AuthenticatonTicket> LogInAsync(IAuthenticationBroker authenticationBroker, string connectionString, string[] scopes, bool requestingDeniedScope, CancellationToken cancellationToken)
         {
-            var ticket = string.IsNullOrWhiteSpace(connectionString) ? new WebDavAuthenticationTicket() : connectionString.DeserializeJson<WebDavAuthenticationTicket>();
+            var ticket = string.IsNullOrWhiteSpace(connectionString) ? new WebDavAuthenticationTicket() : JsonSerializer.Deserialize<WebDavAuthenticationTicket>(connectionString);
             var provider = new WebDavProvider();
             return await authenticationBroker.FormAuthenticationBrokerAsync(LogInAsync,
                 provider.Name,
@@ -92,7 +87,7 @@ namespace Open.FileExplorer
                 var client = new WebDavClient(uri.GetComponents(UriComponents.SchemeAndServer, UriFormat.Unescaped), domain, user, password, ignoreCertErrors);
                 var r = await client.PropFindAsync(uri.AbsolutePath, WebDavDepth.Zero);
                 var options = await client.OptionsAsync(GetDirRelativePath(uri.AbsolutePath, ""), CancellationToken.None);
-                return new AuthenticatonTicket { AuthToken = new WebDavAuthenticationTicket { Server = server, Domain = domain, User = user, Password = password, IgnoreCertErrors = ignoreCertErrors }.SerializeJson(), Tag = options };
+                return new AuthenticatonTicket { AuthToken = JsonSerializer.Serialize(new WebDavAuthenticationTicket { Server = server, Domain = domain, User = user, Password = password, IgnoreCertErrors = ignoreCertErrors }), Tag = options };
             }
             catch (Exception exc) { throw ProcessException(exc); }
         }
@@ -101,7 +96,7 @@ namespace Open.FileExplorer
         {
             try
             {
-                var ticket = refreshToken.DeserializeJson<WebDavAuthenticationTicket>();
+                var ticket = JsonSerializer.Deserialize<WebDavAuthenticationTicket>(refreshToken);
                 var uri = new Uri(ticket.Server);
                 var server = uri.GetComponents(UriComponents.SchemeAndServer, UriFormat.Unescaped);
                 var client = new WebDavClient(server, ticket.Domain, ticket.User, ticket.Password, ticket.IgnoreCertErrors ?? false);
@@ -113,7 +108,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** get info
+        #region get info
 
         protected override async Task<IList<FileSystemItem>> GetItemsAsync(string dirId, CancellationToken cancellationToken)
         {
@@ -155,7 +150,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** download
+        #region download
 
         protected override Task<bool> CanOpenFileAsyncOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -172,7 +167,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** upload
+        #region upload
 
         protected override Task<bool> CanWriteFileAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -197,7 +192,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** create
+        #region create
 
         protected override Task<bool> CanCreateDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -228,7 +223,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** copy
+        #region copy
 
         protected override Task<bool> CanCopyDirectoryOverride(string sourceDirId, string targetDirId, CancellationToken cancellationToken)
         {
@@ -278,7 +273,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** move
+        #region move
 
         protected override Task<bool> CanMoveDirectoryOverride(string sourceDirId, string targetDirId, CancellationToken cancellationToken)
         {
@@ -328,7 +323,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** update
+        #region update
 
         protected override Task<bool> CanUpdateDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -378,7 +373,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** delete
+        #region delete
 
         protected override Task<bool> CanDeleteDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -410,7 +405,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** search
+        #region search
 
         protected override Task<bool> CanSearchAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -453,7 +448,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         public static bool IsCollection(XElement responseItem)
         {

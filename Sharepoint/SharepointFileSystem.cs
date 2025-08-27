@@ -1,21 +1,19 @@
-﻿using Open.FileSystemAsync;
+﻿using Open.FileExplorer.WebDav;
+using Open.FileSystemAsync;
 using Open.WebDav;
-using System;
 using System.Net;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.Sharepoint
 {
     public class SharepointFileSystem : WebDavFileSystem
     {
-        #region ** fields
+        #region fields
 
         private CookieContainer cookieJar = new CookieContainer();
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         public override Task<AuthenticatonTicket> LogInAsync(IAuthenticationBroker authenticationBroker, string connectionString, string[] scopes, bool requestingDeniedScope, CancellationToken cancellationToken)
         {

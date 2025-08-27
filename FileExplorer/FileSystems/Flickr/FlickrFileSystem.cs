@@ -13,7 +13,7 @@ namespace Open.FileExplorer
 {
     public class FlickrFileSystem : AuthenticatedFileSystem, ISocialExtension, ISearchExtension
     {
-        #region ** fields
+        #region fields
 
         public static string ConsumerToken { get; private set; }
         public static string ConsumerTokenSecret { get; private set; }
@@ -23,7 +23,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         static FlickrFileSystem()
         {
@@ -48,7 +48,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         public override async Task<AuthenticatonTicket> LogInAsync(IAuthenticationBroker authenticationBroker, string connectionString, string[] scopes, bool requestingDeniedScope, CancellationToken cancellationToken)
         {
@@ -87,11 +87,11 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         #endregion
 
-        #region ** get info
+        #region get info
 
         protected override DirPathMode DirPathMode
         {
@@ -196,7 +196,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** upload
+        #region upload
 
         protected override string[] GetAcceptedFileTypesOverride(string dirId, bool includeSubDirectories)
         {
@@ -235,7 +235,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** create
+        #region create
 
         //protected override bool CanCreateDirectoryOverride(string path)
         //{
@@ -270,7 +270,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** update
+        #region update
 
         protected override Task<bool> CanUpdateFileOverride(string path, CancellationToken cancellationToken)
         {
@@ -291,7 +291,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** delete
+        #region delete
 
         protected override Task<bool> CanDeleteDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -321,7 +321,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** download
+        #region download
 
         protected override Task<bool> CanOpenFileAsyncOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -340,7 +340,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** social extension
+        #region social extension
 
         public event EventHandler CommentsChanged;
 
@@ -417,7 +417,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** search
+        #region search
 
         protected override Task<bool> CanSearchAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -439,7 +439,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         protected override Task<Exception> ProcessExceptionAsync(Exception exc)
         {

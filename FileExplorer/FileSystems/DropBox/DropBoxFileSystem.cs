@@ -13,7 +13,7 @@ namespace Open.FileExplorer
 {
     public class DropBoxFileSystem : UnifiedItemsFileSystem, ISearchExtension
     {
-        #region ** fields
+        #region fields
 
         public static string ClientId { get; private set; }
         public static string ClientSecret { get; private set; }
@@ -23,7 +23,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         static DropBoxFileSystem()
         {
@@ -34,7 +34,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** object model
+        #region object model
 
         protected override bool IsFileNameExtensionRequired
         {
@@ -49,7 +49,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         public override async Task<AuthenticatonTicket> LogInAsync(IAuthenticationBroker authenticationBroker, string connectionString, string[] scopes, bool requestingDeniedScope, CancellationToken cancellationToken)
         {
@@ -94,7 +94,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** get info
+        #region get info
 
         protected override async Task<FileSystemDrive> GetDriveAsyncOverride(CancellationToken cancellationToken)
         {
@@ -151,7 +151,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** upload
+        #region upload
 
         protected override Task<bool> CanWriteFileAsyncOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -191,7 +191,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** download
+        #region download
 
         protected override Task<bool> CanOpenFileAsyncOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -207,7 +207,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** delete
+        #region delete
 
         protected override Task<bool> CanDeleteDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -235,7 +235,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** create
+        #region create
 
         protected override Task<bool> CanCreateDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -252,7 +252,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** copy
+        #region copy
 
         protected override Task<bool> CanCopyDirectoryOverride(string sourceFileId, string targetDirId, CancellationToken cancellationToken)
         {
@@ -284,7 +284,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** move
+        #region move
 
         protected override Task<bool> CanMoveDirectoryOverride(string sourceDirId, string destDirId, CancellationToken cancellationToken)
         {
@@ -317,7 +317,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** update
+        #region update
 
         protected override Task<bool> CanUpdateDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -353,7 +353,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** search
+        #region search
 
         protected override Task<bool> CanSearchAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -375,7 +375,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
 
         protected override Task<Exception> ProcessExceptionAsync(Exception exc)

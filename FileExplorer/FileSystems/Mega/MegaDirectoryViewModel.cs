@@ -5,7 +5,7 @@ namespace Open.FileExplorer
 {
     public class MegaDirectoryViewModel : FileSystemDirectoryViewModel
     {
-        #region ** initialization
+        #region initialization
 
         public MegaDirectoryViewModel(FileExplorerViewModel fileExplorer, string dirId, FileSystemItem item)
             : base(fileExplorer, dirId, item)

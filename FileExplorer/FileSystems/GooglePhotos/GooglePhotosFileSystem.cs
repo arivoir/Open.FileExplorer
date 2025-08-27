@@ -14,7 +14,7 @@ namespace Open.FileExplorer
 {
     public class GooglePhotosFileSystem : AuthenticatedFileSystem
     {
-        #region ** fields
+        #region fields
 
         public static string ClientId { get; private set; }
         public static string ClientSecret { get; private set; }
@@ -37,7 +37,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         static GooglePhotosFileSystem()
         {
@@ -56,7 +56,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         public override string[] GetScopes(string dirId)
         {
@@ -111,7 +111,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** get info
+        #region get info
 
         protected override DirPathMode DirPathMode
         {
@@ -287,7 +287,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** upload
+        #region upload
 
         protected override string[] GetAcceptedFileTypesOverride(string dirId, bool includeSubDirectories)
         {
@@ -312,7 +312,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** create
+        #region create
 
         protected override Task<bool> CanCreateDirectoryOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -330,7 +330,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** download
+        #region download
 
         protected override async Task<bool> CanOpenFileAsyncOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -349,7 +349,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         protected override Task<Exception> ProcessExceptionAsync(Exception exc)
         {

@@ -1,23 +1,20 @@
-﻿using Open.FileSystemAsync;
+﻿using Open.FileExplorer.WebDav;
+using Open.FileSystemAsync;
 using Open.WebDav;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+using System.Text.Json;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.HiDrive
 {
     public class HiDriveFileSystem : WebDavFileSystem
     {
-        #region ** fields
+        #region fields
 
         private static string HiDriveServer = "https://webdav.hidrive.strato.com";
         private static string HiDriveServerPath = "/users/{0}/";
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         public HiDriveFileSystem()
         {
@@ -26,12 +23,12 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         protected async override Task<AuthenticatonTicket> AuthenticateAsync(IEnumerable<string> scopes = null, bool promptForUserInteraction = true, CancellationToken cancellationToken = default(CancellationToken))
         {
             var ticket = await base.AuthenticateAsync(scopes, promptForUserInteraction, cancellationToken);
-            var webDavTicket = ticket.AuthToken.DeserializeJson<WebDavAuthenticationTicket>();
+            var webDavTicket = JsonSerializer.Deserialize<WebDavAuthenticationTicket>(ticket.AuthToken);
             ServerPath = string.Format(HiDriveServerPath, webDavTicket.User);
             _options = ticket.Tag as WebDavOptions;
             return ticket;
@@ -41,7 +38,7 @@ namespace Open.FileExplorer
         {
             try
             {
-                var ticket = refreshToken.DeserializeJson<WebDavAuthenticationTicket>();
+                var ticket = JsonSerializer.Deserialize<WebDavAuthenticationTicket>(refreshToken);
                 var client = new WebDavClient(HiDriveServer, ticket.Domain, ticket.User, ticket.Password);
                 var options = await client.OptionsAsync(GetDirRelativePath(string.Format(HiDriveServerPath, ticket.User), ""), cancellationToken);
                 return new AuthenticatonTicket { AuthToken = refreshToken, Tag = options };
@@ -51,7 +48,7 @@ namespace Open.FileExplorer
 
         public override Task<AuthenticatonTicket> LogInAsync(IAuthenticationBroker authenticationBroker, string connectionString, string[] scopes, bool requestingDeniedScope, CancellationToken cancellationToken)
         {
-            var ticket = string.IsNullOrWhiteSpace(connectionString) ? new WebDavAuthenticationTicket() : connectionString.DeserializeJson<WebDavAuthenticationTicket>();
+            var ticket = string.IsNullOrWhiteSpace(connectionString) ? new WebDavAuthenticationTicket() : JsonSerializer.Deserialize<WebDavAuthenticationTicket>(connectionString);
             var provider = new HiDriveProvider();
             return authenticationBroker.FormAuthenticationBrokerAsync(async (server, domain, user, password, ignoreCertErrors) =>
                 {
@@ -60,7 +57,7 @@ namespace Open.FileExplorer
                         var client = new WebDavClient(HiDriveServer, domain, user, password);
                         var r = await client.PropFindAsync(string.Format(HiDriveServerPath, user), WebDavDepth.Zero);
                         var options = await client.OptionsAsync(GetDirRelativePath(string.Format(HiDriveServerPath, user), ""), CancellationToken.None);
-                        return new AuthenticatonTicket { AuthToken = new WebDavAuthenticationTicket { User = user, Password = password }.SerializeJson(), Tag = options };
+                        return new AuthenticatonTicket { AuthToken = JsonSerializer.Serialize(new WebDavAuthenticationTicket { User = user, Password = password }), Tag = options };
                     }
                     catch (Exception exc) { throw ProcessException(exc); }
                 },
@@ -75,7 +72,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         protected override async Task<IList<FileSystemItem>> GetItemsAsync(string dirId, CancellationToken cancellationToken)
         {

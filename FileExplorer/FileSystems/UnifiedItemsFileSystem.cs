@@ -10,7 +10,7 @@ namespace Open.FileExplorer
 {
     public abstract class UnifiedItemsFileSystem : AuthenticatedFileSystem
     {
-        #region ** fields
+        #region fields
 
         private Dictionary<string, Task<IList<FileSystemItem>>> _runningOperations = new Dictionary<string, Task<IList<FileSystemItem>>>();
 

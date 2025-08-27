@@ -43,11 +43,11 @@ namespace Open.FileExplorer
                 //yield return new BitcasaProvider();
                 yield return new MegaProvider();
                 //yield return new SugarSyncProvider();
-                yield return new CloudMeProvider();
-                yield return new HiDriveProvider();
-                yield return new FourSharedProvider();
-                yield return new OwnCloudProvider();
-                yield return new WebDavProvider();
+                //yield return new CloudMeProvider();
+                //yield return new HiDriveProvider();
+                //yield return new FourSharedProvider();
+                //yield return new OwnCloudProvider();
+                //yield return new WebDavProvider();
                 //yield return new SharepointProvider();
                 //yield return new BaiduProvider();
                 //yield return new KanboxProvider();
@@ -216,7 +216,7 @@ namespace Open.FileExplorer
         //    return base.GetCachedNames(fileSystem, dirId, namesDict, cancellationToken);
         //}
 
-        #region ** actions
+        #region actions
 
         public override async Task<IEnumerable<FileSystemAction>> GetActions(FileSystemActionContext context, string targetDirectoryId)
         {
@@ -225,13 +225,13 @@ namespace Open.FileExplorer
             if (context.IsSingleGroup &&
                 string.IsNullOrWhiteSpace(context.SingleGroup.BaseDirectoryId))
             {
-                #region ** open connection
+                #region open connection
 
                 AddOpenDirectoryAction(context, actions);
 
                 #endregion
 
-                #region ** add account
+                #region add account
 
                 if (context.IsEmptyGroup && AppService.Settings.IsOnline)
                 {
@@ -248,7 +248,7 @@ namespace Open.FileExplorer
 
                 #endregion
 
-                #region ** pin/unpin to start
+                #region pin/unpin to start
 
                 if (context.IsSingleDirectory && AppService.AreTilesSupported)
                 {
@@ -286,7 +286,7 @@ namespace Open.FileExplorer
 
                 #endregion
 
-                #region ** remove account
+                #region remove account
 
                 await AddDeleteDirectories(context,
                     actions,
@@ -319,7 +319,7 @@ namespace Open.FileExplorer
             }
             else
             {
-                #region ** get connection actions
+                #region get connection actions
                 var connections = await FileSystem.GetDirectoriesAsync("", CancellationToken.None);
                 if (!string.IsNullOrWhiteSpace(targetDirectoryId) && connections.Count > 1)
                 {

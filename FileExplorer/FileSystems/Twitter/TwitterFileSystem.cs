@@ -14,7 +14,7 @@ namespace Open.FileExplorer
 {
     public class TwitterFileSystem : AuthenticatedFileSystem, ISocialExtension
     {
-        #region ** fields
+        #region fields
 
         public static string ConsumerKey { get; set; }
         public static string ConsumerToken { get; set; }
@@ -24,7 +24,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** initialization
+        #region initialization
 
         static TwitterFileSystem()
         {
@@ -35,7 +35,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** authentication
+        #region authentication
 
         protected async override Task<AuthenticatonTicket> AuthenticateAsync(IEnumerable<string> scopes = null, bool promptForUserInteraction = true, CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -94,7 +94,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** get info
+        #region get info
 
         protected override DirPathMode DirPathMode
         {
@@ -170,7 +170,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** upload
+        #region upload
 
         protected override string[] GetAcceptedFileTypesOverride(string dirId, bool includeSubDirectories)
         {
@@ -193,7 +193,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** download
+        #region download
 
         protected override Task<bool> CanOpenFileAsyncOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -210,7 +210,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** delete
+        #region delete
 
         protected override Task<bool> CanDeleteFileOverride(string fileId, CancellationToken cancellationToken)
         {
@@ -227,7 +227,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** search
+        #region search
 
         protected override Task<bool> CanSearchAsyncOverride(string dirId, CancellationToken cancellationToken)
         {
@@ -258,7 +258,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** social extension
+        #region social extension
 
         public event EventHandler CommentsChanged;
 
@@ -336,7 +336,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         protected override Task<Exception> ProcessExceptionAsync(Exception exc)
         {

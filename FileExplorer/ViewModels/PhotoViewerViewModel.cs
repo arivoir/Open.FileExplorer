@@ -11,7 +11,7 @@ namespace Open.FileExplorer
 {
     public class PhotoViewerViewModel : BaseViewModel
     {
-        #region ** fields
+        #region fields
 
         private IDataCollection<FileSystemFileViewModel> _photos;
         private int _currentIndex = -1;
@@ -50,7 +50,7 @@ namespace Open.FileExplorer
             return new FileSystemFileViewModel(FileExplorer, null, null, null);
         }
 
-        #region ** object model
+        #region object model
 
         public FileExplorerViewModel FileExplorer { get; private set; }
 
@@ -94,7 +94,7 @@ namespace Open.FileExplorer
             }
         }
 
-        #region ** photos
+        #region photos
 
         public virtual FileSystemFileViewModel FirstPhoto
         {
@@ -202,7 +202,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** comments
+        #region comments
 
         public bool ToggleDetailsVisible
         {
@@ -227,7 +227,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** labels
+        #region labels
 
         public string ApplicationName
         {
@@ -310,7 +310,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** status
+        #region status
         private SemaphoreSlim _semaphore = new SemaphoreSlim(1);
 
         private async Task OnStatusShown()
@@ -339,7 +339,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** implementation
+        #region implementation
 
         public async Task LoadAlbum(string albumPath, FileSystemFile file, CancellationToken cancellationToken)
         {

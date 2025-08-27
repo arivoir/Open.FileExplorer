@@ -1,15 +1,14 @@
-﻿using Open.FileSystemAsync;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using Open.FileExplorer.WebDav;
+using Open.FileSystemAsync;
 
-namespace Open.FileExplorer
+namespace Open.FileExplorer.CloudMe
 {
     /// <summary>
     /// Provides methods to create a new connection to Google Drive.
     /// </summary>
     public class CloudMeProvider : WebDavProvider
     {
-        #region ** object model
+        #region object model
 
         public override string Name
         {
@@ -23,7 +22,7 @@ namespace Open.FileExplorer
 
         #endregion
 
-        #region ** methods
+        #region methods
 
         public override AuthenticatedFileSystem CreateFileSystem(IAuthenticationManager authenticationManager)
         {
