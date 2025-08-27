@@ -30,18 +30,18 @@ namespace Open.FileExplorer
             get
             {
                 //yield return new FacebookProvider();
-                yield return new GoogleDriveProvider();
+                //yield return new GoogleDriveProvider();
                 //yield return new DropBoxProvider();
-                yield return new OneDriveProvider();
-                yield return new GooglePhotosProvider();
-                yield return new YouTubeProvider();
-                yield return new FlickrProvider();
-                yield return new TwitterProvider();
-                yield return new InstagramProvider();
-                yield return new BoxProvider();
+                //yield return new OneDriveProvider();
+                //yield return new GooglePhotosProvider();
+                //yield return new YouTubeProvider();
+                //yield return new FlickrProvider();
+                //yield return new TwitterProvider();
+                //yield return new InstagramProvider();
+                //yield return new BoxProvider();
                 //yield return new CopyProvider();
                 //yield return new BitcasaProvider();
-                yield return new MegaProvider();
+                //yield return new MegaProvider();
                 //yield return new SugarSyncProvider();
                 //yield return new CloudMeProvider();
                 //yield return new HiDriveProvider();
@@ -51,6 +51,7 @@ namespace Open.FileExplorer
                 //yield return new SharepointProvider();
                 //yield return new BaiduProvider();
                 //yield return new KanboxProvider();
+                yield break;
             }
         }
 

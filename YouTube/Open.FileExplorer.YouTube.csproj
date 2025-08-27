@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Open.DropBox" Version="1.0.0" />
+		<PackageReference Include="Open.YouTube" Version="1.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -16,17 +16,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Strings\DropBoxResources.Designer.cs">
+	  <Compile Update="Strings\YouTubeResources.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
-	    <DependentUpon>DropBoxResources.resx</DependentUpon>
+	    <DependentUpon>YouTubeResources.resx</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Update="Strings\DropBoxResources.resx">
+	  <EmbeddedResource Update="Strings\YouTubeResources.resx">
 	    <Generator>PublicResXFileCodeGenerator</Generator>
-	    <LastGenOutput>DropBoxResources.Designer.cs</LastGenOutput>
+	    <LastGenOutput>YouTubeResources.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
 	</ItemGroup>
 

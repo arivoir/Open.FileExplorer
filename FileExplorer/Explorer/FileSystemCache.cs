@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Path = Open.FileSystemAsync.Path;
@@ -119,7 +120,8 @@ namespace Open.FileExplorer
                 stream = await file.OpenWriteAsync();
                 if (stream != null)
                 {
-                    await enumerable.Select(d => new CachedFileSystemDirectory { Id = d.Id, Name = d.Name }).ToList().SerializeJsonIntoStreamAsync<List<CachedFileSystemDirectory>>(stream);
+                    var directories = enumerable.Select(d => new CachedFileSystemDirectory { Id = d.Id, Name = d.Name }).ToList();
+                    await JsonSerializer.SerializeAsync(stream, directories);
                 }
             }
             catch { }
@@ -144,7 +146,8 @@ namespace Open.FileExplorer
                 stream = await file.OpenWriteAsync();
                 if (stream != null)
                 {
-                    await files.Select(d => new CachedFileSystemFile { Id = d.Id, Name = d.Name, ContentType = d.ContentType }).ToList().SerializeJsonIntoStreamAsync<List<CachedFileSystemFile>>(stream);
+                    var filesList = files.Select(d => new CachedFileSystemFile { Id = d.Id, Name = d.Name, ContentType = d.ContentType }).ToList();
+                    await JsonSerializer.SerializeAsync(stream, filesList);
                 }
             }
             catch { }
@@ -166,7 +169,7 @@ namespace Open.FileExplorer
                     var stream = await file.OpenSequentialReadAsync();
                     try
                     {
-                        var list = stream.DeserializeJson<List<CachedFileSystemDirectory>>();
+                        var list = JsonSerializer.Deserialize<List<CachedFileSystemDirectory>>(stream);
                         return list.Select(cd => new CacheFileSystemDirectory(cd.Id, cd.Name)).Cast<FileSystemDirectory>().AsDataCollection();
                     }
                     finally
@@ -192,7 +195,7 @@ namespace Open.FileExplorer
                     var stream = await file.OpenSequentialReadAsync();
                     try
                     {
-                        var list = stream.DeserializeJson<List<CachedFileSystemFile>>();
+                        var list = JsonSerializer.Deserialize<List<CachedFileSystemFile>>(stream);
                         return list.Select(cd => new CacheFileSystemFile(cd.Id, cd.Name, cd.ContentType)).Cast<FileSystemFile>().AsDataCollection();
                     }
                     finally

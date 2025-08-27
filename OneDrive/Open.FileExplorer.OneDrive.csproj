@@ -8,7 +8,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Open.DropBox" Version="1.0.0" />
+		<PackageReference Include="Open.OneDrive" Version="1.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -16,17 +16,17 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Strings\DropBoxResources.Designer.cs">
+	  <Compile Update="Strings\OneDriveResources.Designer.cs">
 	    <DesignTime>True</DesignTime>
 	    <AutoGen>True</AutoGen>
-	    <DependentUpon>DropBoxResources.resx</DependentUpon>
+	    <DependentUpon>OneDriveResources.resx</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <EmbeddedResource Update="Strings\DropBoxResources.resx">
+	  <EmbeddedResource Update="Strings\OneDriveResources.resx">
 	    <Generator>PublicResXFileCodeGenerator</Generator>
-	    <LastGenOutput>DropBoxResources.Designer.cs</LastGenOutput>
+	    <LastGenOutput>OneDriveResources.Designer.cs</LastGenOutput>
 	  </EmbeddedResource>
 	</ItemGroup>
 

@@ -1,22 +1,22 @@
 ﻿using Open.FileSystemAsync;
 
-namespace Open.FileExplorer.DropBox
+namespace Open.FileExplorer.Box
 {
     /// <summary>
-    /// Provides methods to create a new connection to DropBox.
+    /// Provides methods to create a new connection to Box.
     /// </summary>
-    public class DropBoxProvider : Provider
+    public class BoxProvider : Provider
     {
         #region object model
 
         public override string Name
         {
-            get { return "Dropbox"; }
+            get { return "Box"; }
         }
 
         public override string Color
         {
-            get { return "#FF008BD3"; }
+            get { return "#FF2B80BF"; }
         }
 
         #endregion
@@ -25,7 +25,7 @@ namespace Open.FileExplorer.DropBox
 
         public override AuthenticatedFileSystem CreateFileSystem(IAuthenticationManager authenticationManager)
         {
-            return new DropBoxFileSystem() { AuthenticationManager = authenticationManager };
+            return new BoxFileSystem() { AuthenticationManager = authenticationManager };
         }
 
         #endregion

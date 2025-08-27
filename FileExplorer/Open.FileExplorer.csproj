@@ -16,17 +16,8 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Open.Box" Version="1.0.0" />
 		<PackageReference Include="Open.FileSystemAsync" Version="1.0.1" />
-		<PackageReference Include="Open.Flickr" Version="1.0.0" />
-		<PackageReference Include="Open.GoogleDrive" Version="1.0.0" />
-		<PackageReference Include="Open.GooglePhotos" Version="2.0.0" />
-		<PackageReference Include="Open.Instagram" Version="1.0.0" />
 		<PackageReference Include="Open.IO" Version="1.0.1" />
-		<PackageReference Include="Open.Mega" Version="1.0.0" />
-		<PackageReference Include="Open.OneDrive" Version="1.0.0" />
-		<PackageReference Include="Open.Twitter" Version="1.0.0" />
-		<PackageReference Include="Open.YouTube" Version="1.0.0" />
 	</ItemGroup>
 
 	<ItemGroup>

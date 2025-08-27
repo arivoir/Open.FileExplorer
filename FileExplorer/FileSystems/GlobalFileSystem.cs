@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
@@ -1416,14 +1417,14 @@ namespace Open.FileExplorer
                         var buffer = new byte[fileStream.Length];
                         await fileStream.ReadAsync(buffer, 0, (int)fileStream.Length);
                         var decriptedBuffer = await AppService.UnprotectData(buffer);
-                        return new MemoryStream(decriptedBuffer).DeserializeJson<AccountDirectory[]>().ToList();
+                        return JsonSerializer.Deserialize<AccountDirectory[]>(new MemoryStream(decriptedBuffer)).ToList();
                     }
                 }
                 var file = await storage.TryGetFileAsync(ACCOUNTS_FILE_NAME);
                 if (file != null)
                 {
                     fileStream = (await file.OpenSequentialReadAsync());
-                    return fileStream.DeserializeJson<AccountDirectory[]>().ToList();
+                    return JsonSerializer.Deserialize<AccountDirectory[]>(fileStream).ToList();
                 }
                 return new List<AccountDirectory>();
             }
@@ -1463,13 +1464,13 @@ namespace Open.FileExplorer
                 fileStream = await file.OpenWriteAsync();
                 if (encript)
                 {
-                    var contentString = accounts.ToArray().SerializeJson();
+                    var contentString = JsonSerializer.Serialize(accounts.ToArray());
                     var encodedContent = await AppService.ProtectData(Encoding.UTF8.GetBytes(contentString));
                     await fileStream.WriteAsync(encodedContent, 0, encodedContent.Length);
                 }
                 else
                 {
-                    await accounts.ToArray().SerializeJsonIntoStreamAsync(fileStream);
+                    await JsonSerializer.SerializeAsync(fileStream, accounts.ToArray());
                 }
             }
             finally

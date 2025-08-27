@@ -67,7 +67,7 @@ namespace Open.FileExplorer
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
         #endregion
-        internal IFileSystemAsync FileSystem { get; set; }
+        public IFileSystemAsync FileSystem { get; set; }
         internal IAuthenticationManager AuthenticationManager { get; set; }
 
         public IProvider Provider
