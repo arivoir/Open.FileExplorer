@@ -12,10 +12,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
 		<PackageReference Include="Open.FileSystemAsync" Version="1.0.1" />
 		<PackageReference Include="Open.IO" Version="1.0.1" />
 	</ItemGroup>
